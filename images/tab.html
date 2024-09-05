@@ -1,0 +1,238 @@
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6LoH3G3BfaV1N6impaXxO1NvvM9bzODpqwXG/nVQv69Az0IIY5mZPbXnI5vIGk7" crossorigin="anonymous">
+
+
+
+
+<!-- User Bar -->
+<div class="user-bar">
+    <img id="user-img" src="./Ellipse 9.png" alt="User">
+</div>
+
+<!-- User Popup -->
+<div id="popup" class="popup hidden">
+    <!-- User Profile Section -->
+    <div class="user-profile">
+        <div class="user-pp">
+            <img src="./Ellipse 9.png" alt="User profile picture">
+        </div>
+        <div class="username">
+            <h3>Ben Stokes</h3>
+            <p>stokes55@gmail.com</p>
+        </div>
+    </div>
+
+    <!-- Go Live Button -->
+
+    <button class="go-live-btn">
+        <i class="fas fa-video"></i> Go Live
+    </button>
+    
+
+
+    <!-- Streaming Section -->
+    <div class="all-streaming">
+        <h4>ALL Streaming</h4>
+        <div class="section-1">
+            <img src="./streaming-image.png" alt="Streaming image">
+        </div>
+
+        <!-- Favourites Streams Section -->
+        <h4>Favourites Streams</h4>
+        <div class="section-2">
+            <img src="./Ellipse 7.png" alt="Favourite Stream 1">
+            <img src="./images/unsplash_RGKdWJOUFH0.png" alt="Favourite Stream 2">
+            <img src="./images/Ellipse 9.png" alt="Favourite Stream 3">
+            <img src="./images/Rectangle 7.png" alt="Favourite Stream 4">
+            <img src="./images/Group 7.png" alt="Favourite Stream 5">
+        </div>
+
+        <!-- Friends Section -->
+        <h4>Friends</h4>
+        <div class="section-3">
+            <div class="friends-chat">
+                <img src="./Ellipse 7.png" alt="Garbieal Paul">
+                <div class="streamer-details">
+                    <p><strong>Garbieal Paul</strong></p>
+                    <p class="follow">Followed by 5M</p>
+                </div>
+            </div>
+            <div class="friends-chat">
+                <img src="./images/unsplash_RGKdWJOUFH0.png" alt="Fola Dayo">
+                <div class="streamer-details">
+                    <p><strong>Fola Dayo</strong></p>
+                    <p class="follow">Followed by 35k</p>
+                </div>
+            </div>
+            <div class="friends-chat">
+                <img src="./images/Ellipse 9.png" alt="Stephen Jack">
+                <div class="streamer-details">
+                    <p><strong>Stephen Jack</strong></p>
+                    <p class="follow">Followed by 11k</p>
+                </div>
+            </div>
+            <div class="friends-chat">
+                <img src="./images/Group 7.png" alt="Clark Ronson">
+                <div class="streamer-details">
+                    <p><strong>Clark Ronson</strong></p>
+                    <p class="follow">Followed by 65k</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    /* User Bar */
+.user-bar {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px;
+    background-color: #fff;
+}
+
+.user-bar img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* Popup */
+.popup {
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    background-color: #f5deb3;
+    border-radius: 10px;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    z-index: 1000;
+}
+
+.hidden {
+    display: none;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.user-pp img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.username h3 {
+    font-size: 18px;
+    margin: 0;
+}
+
+.username p {
+    margin: 0;
+    font-size: 14px;
+    color: #555;
+}
+
+/* Go Live Button */
+.go-live-btn {
+    width: 100%;
+    padding: 10px 0;
+    background-color: #FA9200;
+    color: white;
+    border: none;
+    font-size: 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.go-live-btn:hover {
+    background-color: #e58300;
+}
+
+.all-streaming h4 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+/* All Streaming */
+.section-1 img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    object-fit: cover;
+    height: 150px;
+}
+
+/* Favourites Streams */
+.section-2 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.section-2 img {
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+/* Friends */
+.friends-chat {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.friends-chat img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.streamer-details p {
+    margin: 0;
+    font-size: 14px;
+    color: #555;
+}
+
+.streamer-details p strong {
+    color: #000;
+}
+
+</style>
+
+<script>
+    // Get the user image and popup elements
+const userImg = document.getElementById('user-img');
+const userPopup = document.getElementById('popup');
+
+// Toggle the popup visibility on click
+userImg.addEventListener('click', (e) => {
+    e.stopPropagation(); // Prevent the click event from bubbling up
+    userPopup.classList.toggle('hidden');
+});
+
+// Close the popup if clicked outside
+document.addEventListener('click', (event) => {
+    if (!userPopup.contains(event.target) && !userImg.contains(event.target)) {
+        userPopup.classList.add('hidden');
+    }
+});
+
+</script>

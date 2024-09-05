@@ -1,0 +1,124 @@
+<div class="comment-box">
+    <div class="comment-input">
+        <input type="text" id="commentInput" placeholder="Post a comment">
+        <button class="send-button" id="sendButton">Send</button>
+    </div>
+    <div class="comments">
+        <!-- User comments will appear here -->
+    </div>
+</div>
+<style>
+    .comment-box {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid black;
+    margin-top: 20px;
+}
+
+.comment-input {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.comment-input input {
+    width: 80%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.send-button {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.comments {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.comment {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+}
+
+.profile-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #ccc;
+}
+
+.comment-content {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.username {
+    font-weight: bold;
+}
+
+.time {
+    color: #999;
+    font-size: 12px;
+}
+
+</style>
+<script>
+    document.getElementById("sendButton").addEventListener("click", function() {
+    const commentInput = document.getElementById("commentInput").value;
+
+    if (commentInput.trim() !== "") {
+        // Create comment elements
+        const commentDiv = document.createElement("div");
+        commentDiv.classList.add("comment");
+
+        const profileImg = document.createElement("div");
+        profileImg.classList.add("profile-img");
+        // You can add a background image or use an <img> tag if you have a user profile image
+
+        const commentContent = document.createElement("div");
+        commentContent.classList.add("comment-content");
+
+        const username = document.createElement("div");
+        username.classList.add("username");
+        username.innerText = "Username"; // Replace this with the actual username if available
+
+        const time = document.createElement("div");
+        time.classList.add("time");
+        const currentTime = new Date().toLocaleTimeString();
+        time.innerText = currentTime;
+
+        const commentText = document.createElement("div");
+        commentText.innerText = commentInput;
+
+        // Append the username, time, and comment to the comment content div
+        commentContent.appendChild(username);
+        commentContent.appendChild(time);
+        commentContent.appendChild(commentText);
+
+        // Append profile image and comment content to the comment div
+        commentDiv.appendChild(profileImg);
+        commentDiv.appendChild(commentContent);
+
+        // Append the comment div to the comments container
+        document.querySelector(".comments").appendChild(commentDiv);
+
+        // Clear the input field
+        document.getElementById("commentInput").value = "";
+    }
+});
+
+</script>

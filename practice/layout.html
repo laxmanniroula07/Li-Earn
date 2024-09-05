@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Li-Earn</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6LoH3G3BfaV1N6impaXxO1NvvM9bzODpqwXG/nVQv69Az0IIY5mZPbXnI5vIGk7" crossorigin="anonymous">
+    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+</head>
+<body>
+    <style>
+        /* General styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    height: 100vh;
+}
+
+/* Sidebar Navigation */
+.side-nav {
+    width: 250px;
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+}
+
+.side-nav img.logo {
+    width: 150px;
+    margin-bottom: 20px;
+}
+
+.side-nav nav ul {
+    list-style-type: none;
+    padding: 0;
+    width: 100%;
+}
+
+.side-nav nav ul li {
+    width: 100%;
+    padding: 15px 20px;
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    color: #ecf0f1;
+}
+
+.side-nav nav ul li span {
+    margin-right: 10px;
+}
+
+.side-nav nav ul li.active,
+.side-nav nav ul li:hover {
+    background-color: #34495e;
+}
+
+.side-nav nav ul li a {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+/* Main Content Container */
+.container {
+    margin-left: 250px; /* Matches the width of the sidebar */
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: #ecf0f1;
+    overflow: auto;
+}
+
+/* Header Bar */
+.header-bar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: #ecf0f1;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.search-bar input {
+    padding: 10px;
+    width: 300px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+}
+
+.user-bar img {
+    width: 30px;
+    height: 30px;
+    margin-left: 15px;
+    cursor: pointer;
+}
+
+#popup.hidden {
+    display: none;
+}
+
+/* Content Section */
+#content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* User Popup */
+.popup {
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    width: 250px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    z-index: 100;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.user-profile img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.user-profile h3 {
+    margin: 0;
+    font-size: 16px;
+}
+
+.user-profile p {
+    margin: 0;
+    font-size: 12px;
+    color: #7f8c8d;
+}
+
+.go-live-btn {
+    background-color: #e74c3c;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.all-streaming h4 {
+    margin-bottom: 10px;
+    color: #2c3e50;
+}
+
+.all-streaming .section-1 img,
+.all-streaming .section-2 img,
+.all-streaming .section-3 img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.friends-chat {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.friends-chat img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.streamer-details p {
+    margin: 0;
+}
+
+.streamer-details .follow {
+    font-size: 12px;
+    color: #7f8c8d;
+}
+
+    </style>
+    <!-- Sidebar Navigation -->
+    <div class="side-nav">
+        <img class="logo" src="./images/Group 51.png" alt="Logo">
+        <nav>
+            <ul>
+                <li class="active"><a href="home.html"><span class="iconify" data-icon="mdi:home"></span> Home</a></li>
+                <li><a href="communitypost.html"><span class="iconify" data-icon="mdi:star"></span> Community Post</a></li>
+                <li><a href="gaming.html"><span class="iconify" data-icon="mdi:gamepad-variant"></span> Gaming Live</a></li>
+                <li><a href="category.html"><span class="iconify" data-icon="mdi:category"></span> Category</a></li>
+                <li><a href="discover.html"><span class="iconify" data-icon="mdi:compass"></span> Discover</a></li>
+                <li><a href="schedule.html"><span class="iconify" data-icon="mdi:schedule"></span> Schedule</a></li>
+                <li><a href="settings.html"><span class="iconify" data-icon="mdi:cog"></span> Settings</a></li>
+                <li><a href="logout.html"><span class="iconify" data-icon="mdi:logout"></span> Logout</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Main Content Container -->
+    <div class="container">
+        <!-- Header Bar -->
+        <div class="header-bar">
+            <div class="search-bar">
+                <input type="text" placeholder="Search here....">
+            </div>
+            <div class="user-bar">
+                <img src="./images/gravity-ui--bell-dot.svg" alt="Notification">
+                <img src="./images/bi--chat-dots.svg" alt="Chat Icon">
+                <img id="user-img" src="./images/Ellipse 9.png" alt="User">
+            </div>
+        </div>
+
+        <!-- Dynamic Content Section -->
+        <div id="content">
+            <!-- The specific content of each page will be loaded here -->
+        </div>
+    </div>
+
+    <script src="main.js">
+        document.addEventListener('DOMContentLoaded', () => {
+    const content = document.getElementById('content');
+
+    // Function to load a page dynamically
+    function loadPage(page) {
+        fetch(page)
+            .then(response => response.text())
+            .then(html => {
+                content.innerHTML = html;
+            });
+    }
+
+    // Add click event to side-nav links
+    const navLinks = document.querySelectorAll('.side-nav a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', (event) => {
+            event.preventDefault(); // Prevent default anchor behavior
+            const page = link.getAttribute('href');
+            loadPage(page);
+            // Update active class
+            navLinks.forEach(link => link.parentElement.classList.remove('active'));
+            link.parentElement.classList.add('active');
+        });
+    });
+
+    // Load the default page (home.html) on initial load
+    loadPage('home.html');
+});
+
+    </script>
+</body>
+
+</html>

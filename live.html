@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6LoH3G3BfaV1N6impaXxO1NvvM9bzODpqwXG/nVQv69Az0IIY5mZPbXnI5vIGk7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+    <style>
+
+        .side-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 220px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #1a1a1a;
+    color: white;
+}
+
+.side-nav img {
+    height: auto;
+    width: 140px;
+    margin: 25px 0 45px 20%;
+}
+
+.side-nav li {
+    padding: 10px;
+    margin: 5px 0;
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.side-nav li span.iconify {
+    margin: 10px;
+}
+
+
+.side-nav li.active, .side-nav li:hover {
+    background-color: #6C5DD3;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    width: 150px;
+    color: white;
+}
+
+.list-item-link {
+    text-decoration: none;
+    color: inherit; 
+    display: block; 
+}
+
+/* Popup */
+.popup {
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    background-color:white;
+    border-radius: 15px;
+    width: 290px;
+    padding: 20px;
+    z-index: 1000;
+}
+
+.hidden {
+    display: none;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.user-pp img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.username h3 {
+    font-size: 18px;
+    margin: 0;
+    color: black;
+}
+
+.username p {
+    margin: 0;
+    font-size: 14px;
+    color: #555;
+}
+
+/* Go Live Button */
+.go-live-btn {
+    width: 100%;
+    padding: 10px 0;
+    background-color: #e58300;
+    color: white;
+    border: none;
+    font-size: 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.go-live-btn:hover {
+    background-color: #FA9200;
+}
+
+.all-streaming h4 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+/* All Streaming */
+
+
+/* Favourites Streams */
+.section-2 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.section-2 img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Friends */
+.friends-chat {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.friends-chat img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.streamer-details p {
+    margin: 0;
+    font-size: 14px;
+    color: #555;
+}
+
+.streamer-details p strong {
+    color: #000;
+}
+        /* Main container styling */
+        .main-container {
+            background-color: #6C5DD3;
+            margin-left: 212px;
+            width: -webkit-fill-available;
+            box-sizing: border-box;
+            height: 100%;
+            color: white;
+            padding: 20px;
+        }
+
+        /* Header bar styling */
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+        }
+
+        /* Search bar styling */
+        .search {
+            flex: 1;
+            display: flex;
+        }
+
+        .search input[type="text"] {
+            width: 100%;
+            max-width: 600px;
+            padding: 10px;
+            border-radius: 25px;
+            border: none;
+        }
+
+        /* User bar styling */
+        .user {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            margin-right: 15px;
+        }
+
+        .user img {
+            width: 27px;
+            height: 27px;
+            margin: 10px;
+            border-radius: 50%;
+        }
+
+        .user #user-img {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+        }
+
+        /* Profile container styling */
+
+
+
+        .pp-vdo{
+            height: fit-content;
+            width: max-content;
+        }
+
+        .pp-vdo-cmt{
+            display: flex;
+            gap:15px;
+
+            
+
+        }
+        .profile-header {
+            display: flex;
+            color: white;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            padding-bottom: 20px;
+        }
+
+        .profile-pic {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+
+        .profile-info {
+            flex-grow: 1;
+        }
+
+        .profile-info h2 {
+            margin: 0;
+            font-size: 25px;
+        }
+
+        .profile-info .verified {
+            background-image: url('verified-icon.png');
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+        }
+
+        .profile-info p {
+            margin: 5px 0;
+        }
+
+        .profile-info .icon {
+            margin-right: 5px;
+        }
+
+        .profile-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .profile-actions .btn {
+            padding: 10px 20px;
+            border: 1px solid white;
+            border-radius: 5px;
+            cursor: pointer;
+            color: black;
+        }
+
+        .profile-actions .btn.share {
+            background-color: #FA9200;
+        }
+
+        .profile-actions .btn.follow {
+            background-color: #28a745;
+        }
+
+        /* Live Video Container */
+         
+       
+
+        .live-video-container {
+            position: relative;
+            width: 100%;
+            height:100%;
+            overflow: hidden;
+            margin: 0;
+        }
+
+        .live-video-container video {
+            width: 100%;
+            height: 100%;
+            border: 2px solid black;
+            object-fit: cover;
+        }
+
+        .video-live-label {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: red;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 12px;
+        }
+
+        /* Comment Section Styling */
+
+        .chat-container {
+            width:30%;
+            overflow: hidden;
+            margin-left: 20px;
+            display: flex;
+            flex-direction: column;
+            height: 552px;
+          
+        }
+
+        .chat-header {
+            padding: 10px;
+            background-color: #D0E0FF;
+            color: black;
+            font-size: 14px;
+            overflow: hidden;
+           
+        }
+
+        .chat-body {
+            padding: 10px;
+            
+            font-size: 16px;
+            background-color: white;
+            max-height: 700px;
+            height: 450px;
+           overflow-y: auto;
+            border: none;
+
+        }
+
+  #chatBody p {
+    margin: 5px 0;
+    color: black;
+    padding: 5px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    display: block; 
+}
+
+        .chat-footer {
+            display: flex;
+            padding: 10px;
+            border-top: none;
+            background-color: grey;
+        }
+
+         .cmt {
+            flex: 1;
+            
+        }
+        .cmt input[type="text"] {
+            width: 90%;
+            padding: 10px;
+            border-radius: 8px;
+            border: none;
+        }
+
+        .send-button {
+            padding: 10px 15px;
+            background-color: blue;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            margin-left: 10px;
+        }
+
+        /* Related stremers  Section */
+
+        
+        h2 {
+            text-align: center;
+            font-size: 24px; 
+            padding: 10px;
+            margin: 0;
+            color: white;
+            margin: 25px;
+           
+        }
+
+    .streamer-card {
+    background-color: #f5a623;
+    margin: 5px ;
+    width: fit-content;
+    position: relative;
+}
+
+.streamer-card img {
+    width:100%;
+   
+}
+
+.streamer-card .harry-info img {
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    margin-left: 10px;
+}
+.harry-info{
+    display: flex;
+    margin: 10px;
+    gap: 10px;
+
+}
+    .name p{
+        font-size:22px;
+        margin: 0;
+        padding: 0;
+       
+        
+    }
+
+
+.folow-icon {
+    display: flex;
+    align-items: center;
+    margin-left:105px;
+}
+
+.folow-icon img {
+    width: 15px;
+    height: px;
+    margin-right: 5px;
+}
+
+.folow-icon p {
+    margin: 5px;
+    font-size: 15px;
+}
+        
+
+/*  imgaes swiper  */
+ .swiper {
+      width: 100%;
+      height: 100%;
+      background-color:#6C5DD3 ;
+      position: relative;
+    }
+
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+   .swiper-slide .info {
+    background-color: #FA9200; 
+    color: white;
+    position: absolute;
+    bottom: 0;
+    height: 30px;
+    align-items: center;
+    width: 100%;
+
+}
+.info p{
+    text-align:left;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+    .swiper-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .swiper-pagination {
+       
+        bottom: 0px; 
+    }
+
+.swiper-pagination-bullet {
+    background:  white; 
+    opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+    background: #6C5DD3; 
+}
+
+
+    </style>
+</head>
+
+<body>
+    <!-- Sidebar Navigation -->
+   <div class="side-nav">
+    <img class="logo" src="./images/Group 51.png" alt="Logo">
+    <nav>
+        <ul>
+            <li><a href="index.html" class="list-item-link"><span class="iconify" data-icon="mdi:home"></span> Home</a></li>
+            <li><a href="communitypost.html" class="list-item-link"><span class="iconify" data-icon="mdi:star"></span> Community Post</a></li>
+            <li a href="GamingLive.html" class="list-item-link"><span class="iconify" data-icon="mdi:gamepad-variant"></span> Gaming Live</a></li>
+            <li > <a href="communitypost.html" class="list-item-link"><span class="iconify" data-icon="mdi:category"></span> Category</a></li>
+            <li> <a href="communitypost.html" class="list-item-link"><span class="iconify" data-icon="mdi:compass"></span> Discover </a></li>
+            <li><span class="iconify" data-icon="mdi:schedule"></span> Schedule</li>
+            <li><span class="iconify" data-icon="mdi:cog"></span> Settings</li>
+            <li><span class="iconify" data-icon="mdi:logout"></span> Logout</li>
+        </ul>
+    </nav>
+</div>
+    <!-- Main Content Container -->
+    <div class="main-container">
+        <!-- Header Bar -->
+        <div class="header">
+            <div class="search">
+                <input type="text" placeholder="Search here....">
+            </div>
+            <div class="user">
+                <img src="./images/gravity-ui--bell-dot.svg" alt="Notification">
+                <img src="./images/bi--chat-dots.svg" alt="Chat Icon">
+                <img id="user-img" src="./images/Ellipse 9.png" alt="User">
+            </div>
+        </div>
+        <!-- User Popup -->
+    <div id="popup" class="popup hidden">
+        <!-- User Profile Section -->
+        <div class="user-profile">
+            <div class="user-pp">
+                <img src="./images/Ellipse 9.png" alt="User profile picture">
+            </div>
+            <div class="username">
+                <h3>Ben Stokes</h3>
+                <p>stokes55@gmail.com</p>
+            </div>
+        </div>
+
+        <!-- Go Live Button -->
+        <button class="go-live-btn">
+            <i class="fas fa-video"></i> Go Live
+        </button>
+
+        <!-- Streaming Section -->
+        <div class="all-streaming">
+            <h4>ALL Streaming</h4>
+            <div class="section-1">
+                <img src="./streaming-image.png" alt="Streaming image">
+            </div>
+
+            <!-- Favourites Streams Section -->
+            <h4>Favourites Streams</h4>
+            <div class="section-2">
+                <img src="./images/Ellipse 7.png" alt="Favourite Stream 1">
+                <img src="./images/unsplash_RGKdWJOUFH0.png" alt="Favourite Stream 2">
+                <img src="./images/Ellipse 9.png" alt="Favourite Stream 3">
+                <img src="./images/Rectangle 7.png" alt="Favourite Stream 4">
+                <img src="./images/Group 7.png" alt="Favourite Stream 5">
+            </div>
+
+            <!-- Friends Section -->
+            <h4>Friends</h4>
+            <div class="section-3">
+                <div class="friends-chat">
+                    <img src="./images/Ellipse 7.png" alt="Garbieal Paul">
+                    <div class="streamer-details">
+                        <p><strong>Garbieal Paul</strong></p>
+                        <p class="follow">Followed by 5M</p>
+                    </div>
+                </div>
+                <div class="friends-chat">
+                    <img src="./images/unsplash_RGKdWJOUFH0.png" alt="Fola Dayo">
+                    <div class="streamer-details">
+                        <p><strong>Fola Dayo</strong></p>
+                        <p class="follow">Followed by 35k</p>
+                    </div>
+                </div>
+                <div class="friends-chat">
+                    <img src="./images/Ellipse 9.png" alt="Stephen Jack">
+                    <div class="streamer-details">
+                        <p><strong>Stephen Jack</strong></p>
+                        <p class="follow">Followed by 11k</p>
+                    </div>
+                </div>
+                <div class="friends-chat">
+                    <img src="./images/Group 7.png" alt="Clark Ronson">
+                    <div class="streamer-details">
+                        <p><strong>Clark Ronson</strong></p>
+                        <p class="follow">Followed by 65k</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <!-- Profile Container -->
+         <div class="pp-vdo-cmt">
+       <div class="pp-vdo">
+        <div class="profile-header">
+            <img src="./images/Ellipse 9.png" alt="Profile" class="profile-pic">
+            <div class="profile-info">
+                <h2>Harry </h2>
+                <p>Li-Earn ID: 884032546</p>
+                <p><span class="icon">&#128183;</span> 1485449 <span class="icon">&#128100;</span> 1009</p>
+            </div>
+            <div class="profile-actions">
+                <button class="btn share">Share</button>
+                <button class="btn follow">Follow</button>
+                <button class="enjoy">Enjoy LIVE on phone</button>
+            </div>
+            
+        </div>
+
+        <!-- Live Video Section -->
+        
+            <div class="live-video-container">
+                <div class="video-live-label">Live</div>
+                <video controls>
+                    <source src="./videos/live video.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+            <!-- Comment Section -->
+            <div class="chat-container">
+                <div class="chat-header">
+                    Welcome to Li-Earn Live! Please do not spread inappropriate content that violates our community guidelines. Warning: Unofficial top-ups may suffer from safety risks.
+                </div>
+                <div class="chat-body" id="chatBody">
+                    <p id="noComment">NO COMMENTS</p>
+                </div>
+                <div class="chat-footer">
+                    <div class="cmt">
+                        <input type="text" id="commentInput" placeholder="Write a comment....">
+                    </div>
+                    <button class="send-button" id="sendButton" onclick="sendComment()">Send</button>
+                </div>
+            </div>
+        </div>
+        
+
+    <!-- Related streamers Section -->
+    <h2>Related Streamers</h2>
+    <!-- Swiper -->
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="streamer-card">
+                    <img src="../images/rcc5.jpg" alt="Harry Potter">
+                    <div class="live-label">Live</div>
+                    <div class="harry-info">
+                        <img src="./images/Ellipse 7.png" alt="harry">
+                        <div class="name">
+                            <p></p>Harry
+                        </div>
+                        <div class="folow-icon">
+                            <img src="./images/user.png" alt="User Icon">
+                            <p>80k</p>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+            
+            <div class="swiper-slide">
+                <div class="streamer-card">
+                    <img src="../images/rcc4.jpg" alt="Harry Potter">
+                    <div class="live-label">Live</div>
+                    <div class="harry-info">
+                        <img src="./images/Ellipse 7.png" alt="harry">
+                        <div class="name">
+                            <p>Robert</p>
+                        </div>
+                        <div class="folow-icon">
+                            <img src="./images/user.png" alt="User Icon">
+                            <p>5k</p>
+                        </div>
+                    </div> 
+                </div>
+                
+                
+            </div>
+            <div class="swiper-slide">
+                <div class="streamer-card">
+                    <img src="../images/rcc6.jpg" alt="Harry Potter">
+                    <div class="live-label">Live</div>
+                    <div class="harry-info">
+                        <img src="./images/Ellipse 7.png" alt="harry">
+                        <div class="name">
+                            <p>Harry </p>
+                        </div>
+                        <div class="folow-icon">
+                            <img src="./images/user.png" alt="User Icon">
+                            <p>950</p>
+                        </div>
+                    </div> 
+                </div>
+                
+            </div>
+            <div class="swiper-slide">
+                <div class="streamer-card">
+                    <img src="./images/rcc4.jpg" alt="Harry Potter">
+                    <div class="live-label">Live</div>
+                    <div class="harry-info">
+                        <img src="./images/Ellipse 7.png" alt="harry">
+                        <div class="name">
+                            <p>John</p>
+                        </div>
+                        <div class="folow-icon">
+                            <img src="./images/user.png" alt="User Icon">
+                            <p>10k</p>
+                        </div>
+                    </div> 
+                </div>
+                
+            </div>
+            <div class="swiper-slide">
+                <div class="streamer-card">
+                    <img src="./images/rcc6.jpg" alt="Harry Potter">
+                    <div class="live-label">Live</div>
+                    <div class="harry-info">
+                        <img src="./images/Ellipse 7.png" alt="harry">
+                        <div class="name">
+                            <p>Robert</p>
+                        </div>
+                        <div class="folow-icon">
+                            <img src="./images/user.png" alt="User Icon">
+                            <p>2k</p>
+                        </div>
+                    </div> 
+                </div>
+                
+            </div>
+            
+        </div>
+      <div class="swiper-pagination"></div>
+    </div>
+   
+
+
+    <!-- Videos and Posts Section -->
+    <h2>Jenny Videos and posts</h2>
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="streamer-card">
+                        <img src="./images/cc.jpg" alt="Harry Potter">
+                        <div class="harry-info">
+                            <img src="./images/like.png" alt="harry">
+                            <div class="name">
+                                <p>12k</p>
+                            </div>
+                            <div class="folow-icon">
+                                <img src="./images/user.png" alt="User Icon">
+                                <p>2k</p>
+                            </div>
+                        </div> 
+                    </div>
+                    
+                </div>
+                <div class="swiper-slide">
+                    <div class="streamer-card">
+                        <img src="./images/rcc2.jpg" alt="Harry Potter">
+                        <div class="harry-info">
+                            <img src="./images/like.png" alt="harry">
+                            <div class="name">
+                                <p>1250</p>
+                            </div>
+                            <div class="folow-icon">
+                                <img src="./images/user.png" alt="User Icon">
+                                <p>5.8k</p>
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="streamer-card">
+                        <img src="./images/rcc3.jpg" alt="Harry Potter">
+                        <div class="harry-info">
+                            <img src="./images/like.png" alt="harry">
+                            <div class="name">
+                                <p>12.5k</p>
+                            </div>
+                            <div class="folow-icon">
+                                <img src="./images/user.png" alt="User Icon">
+                                <p>8k</p>
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="streamer-card">
+                        <img src="./images/cc.jpg" alt="Harry Potter">
+                        <div class="harry-info">
+                            <img src="./images/like.png" alt="harry">
+                            <div class="name">
+                                <p>1250</p>
+                            </div>
+                            <div class="folow-icon">
+                                <img src="./images/user.png" alt="User Icon">
+                                <p>1k</p>
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="streamer-card">
+                        <img src="./images/rcc3.jpg" alt="Harry Potter">
+                        <div class="harry-info">
+                            <img src="./images/like.png" alt="harry">
+                            <div class="name">
+                                <p>1M</p>
+                            </div>
+                            <div class="folow-icon">
+                                <img src="./images/user.png" alt="User Icon">
+                                <p>25k</p>
+                            </div>
+                        </div> 
+                    </div>
+                    
+                </div>
+                <div class="swiper-slide">
+                    <div class="streamer-card">
+                        <img src="./images/rcc2.jpg" alt="Harry Potter">
+                        <div class="harry-info">
+                            <img src="./images/like.png" alt="harry">
+                            <div class="name">
+                                <p>800</p>
+                            </div>
+                            <div class="folow-icon">
+                                <img src="./images/user.png" alt="User Icon">
+                                <p>1.8k</p>
+                            </div>
+                        </div> 
+                    </div>
+
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div> 
+    
+
+
+
+
+</div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+
+    <script>
+        
+     // user popup functionality 
+const userImg = document.getElementById('user-img');
+const userPopup = document.getElementById('popup');
+
+userImg.addEventListener('click', (e) => {
+    e.stopPropagation(); 
+    userPopup.classList.toggle('hidden');
+});
+
+document.addEventListener('click', (event) => {
+    if (!userPopup.contains(event.target) && !userImg.contains(event.target)) {
+        userPopup.classList.add('hidden');
+    }
+});
+
+
+// post comment functionality 
+function sendComment() {
+    
+    var commentInput = document.getElementById('commentInput');
+    var comment = commentInput.value.trim();
+    
+   
+    if (comment) {
+        
+        var noComment = document.getElementById('noComment');
+        if (noComment) {
+            noComment.style.display = 'none';
+        }
+        var newComment = document.createElement('p');
+        newComment.textContent = comment;
+        var chatBody = document.getElementById('chatBody');
+        chatBody.appendChild(newComment);
+
+        chatBody.scrollTop = chatBody.scrollHeight;
+        commentInput.value = '';
+    } 
+}
+
+
+// initilize swiper function 
+var swiper = new Swiper(".mySwiper", {
+      slidesPerView: 3,
+      spaceBetween: 30,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+    });
+
+
+   
+
+
+
+
+    
+    </script>
+
+</body>
+
+</html>

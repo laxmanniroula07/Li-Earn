@@ -1,0 +1,566 @@
+/* Side Navigation */
+.side-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 220px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #1a1a1a;
+    color: white;
+}
+
+.side-nav img {
+    width: 140px;
+    margin: 25px 0 45px 20%;
+}
+
+.side-nav li {
+    padding: 10px;
+    margin: 5px 0;
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.side-nav li span.iconify {
+    margin: 10px;
+}
+
+.side-nav li.active, 
+.side-nav li:hover {
+    background-color: #6C5DD3;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    width: 150px;
+}
+
+.list-item-link {
+    text-decoration: none;
+    color: inherit; 
+    display: block; 
+}
+
+/* Main Body Content */
+.container {
+    background-color: #6C5DD3;
+    margin-left: 212px;
+    padding-left: 25px;
+    margin-top: -8px;
+    width: -webkit-fill-available;
+    box-sizing: border-box;
+    height: 100%;
+}
+
+.header-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 15px;
+    background-color: #6C5DD3;
+    color: white;
+    margin-bottom: 15px;
+}
+
+.search-bar {
+    flex: 1;
+    display: flex;
+    padding: 0 20px;
+}
+
+.search-bar input[type="text"] {
+    width: 100%;
+    max-width: 600px;
+    padding: 10px;
+    border-radius: 25px;
+    border: none;
+}
+
+/* User Bar */
+.user-bar {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+}
+
+.user-bar img {
+    width: 27px;
+    height: 27px;
+    margin: 10px;
+    border-radius: 50%;
+}
+
+.user-bar #user-img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+
+/* Popup */
+.popup {
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    background-color: white;
+    border-radius: 15px;
+    width: 290px;
+    padding: 20px;
+    z-index: 1000;
+}
+
+.hidden {
+    display: none;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.user-pp img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.username h3 {
+    font-size: 18px;
+    margin: 0;
+    color: black;
+}
+
+.username p {
+    margin: 0;
+    font-size: 14px;
+    color: #555;
+}
+
+/* Go Live Button */
+.go-live-btn {
+    width: 100%;
+    padding: 10px 0;
+    background-color: #e58300;
+    color: white;
+    border: none;
+    font-size: 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.go-live-btn:hover {
+    background-color: #FA9200;
+}
+
+.all-streaming h4 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+/* Favourites Streams */
+.section-2 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.section-2 img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Friends */
+.friends-chat {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.friends-chat img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.streamer-details p {
+    margin: 0;
+    font-size: 14px;
+    color: #555;
+}
+
+.streamer-details p strong {
+    color: #000;
+}
+
+/* Live Video and Image Slider */
+.live-video-container {
+    position: relative;
+    width: 70%;
+    height: 60%;
+    overflow: hidden;
+    margin: 20px 0;
+}
+
+.live-video-container button {
+    position: relative;
+    background-color: white;
+    color: black;
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-size: 14px;
+    border: none;
+    width: 100px;
+    height: 30px;
+    margin: 5px;
+}
+
+.live-video-container button:hover {
+    background-color: #FA9200;
+}
+
+.live-video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.video-live-label {
+    position: absolute;
+    top: 50px;
+    right: 10px;
+    background-color: red;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+}
+
+/* Image Slider */
+.flex-video {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.scroll-container {
+    display: flex;
+    position: relative;
+    width: 290px;
+    height: 415px;
+    overflow: hidden;
+    border: 1px solid white;
+    border-radius: 5px;
+    margin-right: 25px;
+}
+
+.images {
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto;
+    height: 100%;
+    scroll-behavior: smooth;
+}
+
+.images img {
+    width: 95%;
+    margin: 5px;
+}
+
+/* Top Streaming and More Country Section  and live games */
+.stream{
+    display: flex;
+}
+
+.stream-container, 
+.game-streaming {
+    height: fit-content;
+    width: 100%;
+}
+
+.stream-container, 
+.game-streaming h3 {
+    color: white;
+    font-size: 30px;
+    margin: 15px;
+}
+
+.country-items, 
+.games-items {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+}
+
+.country-items button, 
+.games-items button {
+    border-radius: 29px;
+    width: auto;
+    margin: 2px;
+    padding: 8px 16px;
+    height: 35px;
+    border:none;
+    background-color: white;
+    
+}
+
+.country-items button:hover, 
+.games-items button:hover {
+    background-color: #FA9200;
+}
+
+
+#more-btn {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    border: 1px solid #FA9200;
+    padding: 10px;
+    top: 45px;
+    left: 35px;
+    z-index: 1;
+    width: fit-content;
+}
+
+#more-btn:hover + .dropdown-content,
+.dropdown-content:hover {
+    display: block;
+}
+
+
+.tab {
+    overflow: hidden;
+    border-bottom: 1px solid #FA9200;
+}
+
+.tab button {
+    background-color: white;
+    float: left;
+    align-items: center;
+    border: none;
+    outline: none;
+    padding: 14px 16px;
+    border-bottom: 2px solid transparent;
+    font-size: 20px;
+}
+
+.tab button:hover {
+    border-bottom: 2px solid #FA9200;
+}
+
+.tab button.active {
+    border-bottom: 2px solid #FA9200;
+    color: black;
+}
+
+.tabcontent {
+    display: none;
+    padding: 10px 0;
+    clear: both;
+}
+
+.tabcontent a {
+    display: inline-block;
+    padding: 8px 12px;
+    margin: 4px;
+    background-color: #f0f0f0;
+    border-radius: 16px;
+    color: black;
+    text-decoration: none;
+}
+
+.tabcontent a:hover {
+    background-color: #FA9200;
+    color: white;
+}
+
+/* Card and Streaming Section */
+.card-container {
+    display: grid;
+    width: 800px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+    padding: 20px 10px 0 5px;
+}
+
+.card {
+    background-color: white;
+    box-shadow: 0 3px 6px black;
+    border-radius: 10px;
+    width: 100%;
+    height: 285px;
+}
+
+.card-image {
+    position: relative;
+}
+
+.card-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.live-label {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: red;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 10px;
+}
+
+.card-content {
+    padding: 5px;
+}
+
+h1 {
+    margin: 0;
+    text-align: left;
+    font-size: 15px;
+    color: black;
+}
+
+.streamer-profile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 5px;
+}
+
+.streamer-info {
+    display: flex;
+    align-items: center;
+}
+
+.streamer-info img {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    margin: 0;
+}
+
+.streamer-details p {
+    margin: 3px 0;
+    font-size: 10px;
+    color: black;
+}
+
+.streamer-details .viewers-info {
+    margin: 0;
+    font-size: 7px;
+    color: #333;
+}
+
+.viewers-icon {
+    margin: 2px;
+    color: red;
+    vertical-align: middle;
+}
+
+.streamer-watch-live {
+    text-align: center;
+}
+
+.watch-live-button {
+    align-items: center;
+    background-color: #FA9200;
+    color: white;
+    border: none;
+    height: 20px;
+    width: 72px;
+    border-radius: 10px;
+    font-size: 7px;
+}
+
+.watch-live-button .iconify {
+    margin-right: 5px;
+}
+
+.watch-live-button:hover {
+    background-color: #e07b00;
+}
+
+/* Top Ranks  */
+.top-rank {
+    text-align: center;
+    background-color: #ccc;
+    width: 260px;
+    height: 585px;
+    margin: 12px 0;
+    border-radius: 13px;
+}
+
+.rank-tabs {
+    display: inline-block;
+    margin-top: 10px;
+}
+
+/* .rank-tab-active { 
+    background-color: blue;
+}
+*/
+
+/* View and coins  Content */
+.content {
+    display: none;
+    margin: 10px;
+    padding: 10px;
+}
+
+.content.active {
+    display: block;
+}
+
+.streamer-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.streamer-info img {
+    border-radius: 50%;
+    margin: 5px;
+}
+
+.streamer-details p {
+    text-align: left;
+}
+
+.viewers-info {
+    font-size: 12px; 
+}
+
+.top-watch-live-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    align-items: center;
+    height: 25px;
+    font-size: 13px;
+    border-radius: 12px;
+}
+
+.top-watch-live-button:hover {
+    background-color: #FA9200;
+}

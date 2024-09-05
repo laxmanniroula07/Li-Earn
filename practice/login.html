@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profile Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        .settings-section {
+            width: 100%;
+            max-width: 800px;
+            margin: 50px auto;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        .settings-section h2 {
+            margin-top: 0;
+            color: #6c5ce7;
+        }
+
+        .settings-section ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .settings-section li {
+            padding: 15px;
+            cursor: pointer;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .acc-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #E0E0E0;
+        }
+
+        .acc-flex:last-child {
+            border-bottom: none;
+        }
+
+        .acc-name {
+            display: flex;
+            align-items: center;
+        }
+
+        .acc-name span {
+            margin-left: 8px;
+            font-size: 16px;
+        }
+
+        .acc-icon .iconify {
+            font-size: 18px;
+            color: #333;
+        }
+
+        /* Content and sliding effect styles */
+        .content {
+            max-height: 0;
+            overflow: hidden;
+            width: 90%;
+            margin-left: 30px;
+            width: 90%;
+            margin-left: 30px;
+        }
+
+        .content.active {
+            max-height: 500px; 
+            padding: 0;
+            height: 100%;
+           
+            width: 90%;
+            margin-left: 30px;
+        }
+
+        .edit-profile-header {
+            background-color: #6c5ce7;
+            padding: 15px;
+            color: white;
+            text-align: center;
+            border-radius: 8px 8px 0 0;
+        }
+
+        .edit-profile-form {
+            background-color: white;
+            padding: 20px;
+            border-radius: 0 0 8px 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-image {
+            display: flex;
+            justify-content: center;
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .profile-image img {
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+        }
+
+        .edit-icon {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            cursor: pointer;
+            background-color: white;
+            border-radius: 50%;
+            padding: 5px;
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        form input, form select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #fdcb6e;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #e17055;
+        }
+    </style>
+</head>
+<body>
+    <div class="settings-section">
+        <h2>Account Settings</h2>
+        <ul>
+            <li id="edit-profile-link">
+                <div class="acc-flex">
+                    <div class="acc-name">
+                        <span class="iconify" data-icon="ic:outline-person" data-width="18"></span>
+                        <span>Edit profile</span>
+                    </div>
+                    <div class="acc-icon">
+                        <span class="iconify" data-icon="ic:outline-chevron-right" data-width="18"></span>
+                    </div>
+                </div>
+            </li>
+            <!-- Add more settings options if needed -->
+        </ul>
+    </div>
+    
+    <div class="content" id="edit-profile-section">
+        <div class="edit-profile-header">
+            <h2>Edit Profile</h2>
+        </div>
+        <div class="edit-profile-form">
+            <div class="profile-image">
+                <img src="path_to_image.jpg" alt="Profile Picture">
+                <span class="edit-icon">✏️</span>
+            </div>
+            <form>
+                <label for="username">Username</label>
+                <input type="text" id="username" value="Jackson Michel">
+
+                <label for="email">Email</label>
+                <input type="email" id="email" value="Jackson07@gmail.com">
+
+                <label for="country">Country</label>
+                <select id="country">
+                    <option value="Nepal">Nepal</option>
+                    <!-- Add more countries if needed -->
+                </select>
+
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" value="+977 9856231489">
+
+                <button type="submit">Update</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        document.getElementById('edit-profile-link').addEventListener('click', function() {
+            var editProfileSection = document.getElementById('edit-profile-section');
+            if (editProfileSection.classList.contains('active')) {
+                editProfileSection.classList.remove('active');
+            } else {
+                editProfileSection.classList.add('active');
+            }
+        });
+    </script>
+</body>
+</html>

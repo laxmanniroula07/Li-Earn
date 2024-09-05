@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Setting </title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6LoH3G3BfaV1N6impaXxO1NvvM9bzODpqwXG/nVQv69Az0IIY5mZPbXnI5vIGk7" crossorigin="anonymous">
+    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+    <style>
+        /* Sidebar Navigation */
+        .side-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 236px;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background-color: #1a1a1a;
+            color: white;
+        }
+
+        .side-nav img {
+            height: auto;
+            width: 140px;
+            margin: 25px 0 45px 20%;
+        }
+
+        .side-nav li {
+            padding: 10px;
+            margin: 5px 0;
+            margin-left: 10px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .side-nav li span.iconify {
+            margin: 10px;
+        }
+
+        .side-nav li.active,
+        .side-nav li:hover {
+            background-color: #6C5DD3;
+            border-top-left-radius: 25px;
+            border-bottom-left-radius: 25px;
+            width: 206px;
+            color: white;
+        }
+
+        .list-item-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        /* Main Content Container */
+        .container {
+            background-color: #6C5DD3;
+            margin-left: 228px;
+            padding-left: 25px;
+            width: calc(100% - 220px);
+            box-sizing: border-box;
+            height: 155vh;
+            margin-bottom: 0;
+        }
+
+        .header-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 15px;
+            background-color: #6C5DD3;
+            color: white;
+            margin-bottom: -40px;
+        }
+
+        .search-bar {
+            flex: 1;
+            display: flex;
+            padding: 0 20px;
+        }
+
+        .search-bar input[type="text"] {
+            width: 100%;
+            max-width: 600px;
+            padding: 10px;
+            border-radius: 25px;
+            border: none;
+        }
+
+        /* User Bar */
+        .user-bar {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            padding: 15px;
+        }
+
+        .user-bar img {
+            width: 27px;
+            height: 27px;
+            margin: 10px;
+            border-radius: 50%;
+        }
+
+        .user-bar #user-img {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+        }
+
+        /* Popup */
+        .popup {
+            position: absolute;
+            top: 70px;
+            right: 20px;
+            background-color: white;
+            border-radius: 15px;
+            width: 290px;
+            padding: 20px;
+            z-index: 1000;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .user-profile {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .user-pp img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .username h3 {
+            font-size: 18px;
+            margin: 0;
+            color: black;
+        }
+
+        .username p {
+            margin: 0;
+            font-size: 14px;
+            color: #555;
+        }
+
+        /* Go Live Button */
+        .go-live-btn {
+            width: 100%;
+            padding: 10px 0;
+            background-color: #e58300;
+            color: white;
+            border: none;
+            font-size: 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .go-live-btn:hover {
+            background-color: blue;
+        }
+
+        .all-streaming h4 {
+            font-size: 16px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        /* Favourites Streams */
+.section-2 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.section-2 img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Friends */
+.friends-chat {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.friends-chat img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.streamer-details p {
+    margin: 0;
+    font-size: 14px;
+    color: #555;
+}
+
+.streamer-details p strong {
+    color: #000;
+}
+
+       
+        /* setting page  */
+
+        .topic {
+            display: flex;
+            align-items: center;
+            color: white ;
+            font-size: 50px;
+        }
+        
+
+
+    .setting-controls {
+   
+    margin: 0px 35px 0px 5px;
+    padding: 30px;
+    background-color: #f5f5f5;
+    border-radius: 30px;
+    
+}
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.profile-picture {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.profile-info h3 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.profile-info p {
+    margin: 0;
+    color: #888;
+    font-size: 14px;
+}
+
+
+.acc-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #E0E0E0;
+}
+
+.acc-flex:last-child {
+    border-bottom: none;
+}
+
+.acc-flex span {
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+}
+
+.acc-flex .iconify {
+    margin-right: 10px;
+    color: #555;
+}
+
+.acc-icon {
+    display: flex;
+    align-items: center;
+}
+
+.acc-icon .iconify {
+    font-size: 18px;
+    color: #333;
+}
+
+.settings-section {
+    margin-bottom: 20px;
+}
+
+.settings-section h2 {
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #706d6d;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 20px;
+    padding: 0 20px;
+}
+
+li .acc-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #E0E0E0;
+}
+
+li .acc-flex .iconify {
+    margin-right: 10px;
+    color: #555;
+}
+
+li .acc-flex .acc-name {
+    display: flex;
+    align-items: center;
+}
+
+li .acc-flex .acc-name span {
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+}
+
+li .acc-flex .acc-icon {
+    display: flex;
+    align-items: center;
+}
+
+.settings-section li .icon {
+    font-size: 18px;
+    margin-right: 15px;
+    color: #333;
+}
+
+.settings-section li .arrow {
+    font-size: 18px;
+    color: #888;
+}
+
+.settings-section li label.switch {
+    position: relative;
+    display: inline-block;
+    width: 34px;
+    height: 20px;
+}
+
+.settings-section li label.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.settings-section li label.switch .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    border-radius: 34px;
+}
+
+.settings-section li label.switch .slider:before {
+    position: absolute;
+    content: "";
+    height: 12px;
+    width: 12px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    border-radius: 50%;
+}
+
+.settings-section li label.switch input:checked + .slider {
+    background-color: #fa9200;
+}
+
+.settings-section li label.switch input:checked + .slider:before {
+    transform: translateX(14px);
+}
+
+/* edit profile content */
+
+
+
+        
+    </style>
+</head>
+
+<body>
+    <!-- Sidebar Navigation -->
+    <div class="side-nav">
+        <img class="logo" src="./images/Group 51.png" alt="Logo">
+        <nav>
+            <ul>
+                <li><a href="index.html" class="list-item-link"><span class="iconify" data-icon="mdi:home"></span> Home</a></li>
+                <li><a href="communitypost.html" class="list-item-link"><span class="iconify" data-icon="mdi:star"></span> Community Post</a></li>
+                <li><a href="GamingLive.html" class="list-item-link"><span class="iconify" data-icon="mdi:gamepad-variant"></span> Gaming Live</a></li>
+                <li><a href="communitypost.html" class="list-item-link"><span class="iconify" data-icon="mdi:category"></span> Category</a></li>
+                <li><a href="communitypost.html" class="list-item-link"><span class="iconify" data-icon="mdi:compass"></span> Discover</a></li>
+                <li><span class="iconify" data-icon="mdi:schedule"></span> Schedule</li>
+                <li class="active"><span class="iconify" data-icon="mdi:cog"></span> Settings</li>
+                <li><span class="iconify" data-icon="mdi:logout"></span> Logout</li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Main Content Container -->
+    <div class="container">
+        <!-- Header Bar -->
+        <div class="header-bar">
+            <!-- Search Bar -->
+            <div class="search-bar">
+                <input type="text" placeholder="Search here....">
+            </div>
+
+            <!-- User Bar -->
+            <div class="user-bar">
+                <img src="./images/gravity-ui--bell-dot.svg" alt="Notification">
+                <img src="./images/bi--chat-dots.svg" alt="Chat Icon">
+                <img id="user-img" src="./images/Ellipse 9.png" alt="User">
+            </div>
+        </div>
+
+        <!-- User Popup -->
+        <div id="popup" class="popup hidden">
+            <!-- User Profile Section -->
+            <div class="user-profile">
+                <div class="user-pp">
+                    <img src="./images/Ellipse 9.png" alt="User profile picture">
+                </div>
+                <div class="username">
+                    <h3>Ben Stokes</h3>
+                    <p>stokes55@gmail.com</p>
+                </div>
+            </div>
+
+            <!-- Go Live Button -->
+            <button class="go-live-btn">
+                <i class="fas fa-video"></i> Go Live
+            </button>
+
+            <!-- Streaming Section -->
+            <div class="all-streaming">
+                <h4>ALL Streaming</h4>
+                <div class="section-1">
+                    <img src="./streaming-image.png" alt="Streaming image">
+                </div>
+
+                <!-- Favourites Streams Section -->
+                <h4>Favourites Streams</h4>
+                <div class="section-2">
+                    <img src="./images/Ellipse 7.png" alt="Favourite Stream 1">
+                    <img src="./images/unsplash_RGKdWJOUFH0.png" alt="Favourite Stream 2">
+                    <img src="./images/Ellipse 9.png" alt="Favourite Stream 3">
+                    <img src="./images/Rectangle 7.png" alt="Favourite Stream 4">
+                    <img src="./images/Group 7.png" alt="Favourite Stream 5">
+                </div>
+
+                <!-- Friends Section -->
+                <h4>Friends</h4>
+                <div class="section-3">
+                    <div class="friends-chat">
+                        <img src="./images/Ellipse 7.png" alt="Garbieal Paul">
+                        <div class="streamer-details">
+                            <p><strong>Garbieal Paul</strong></p>
+                            <p class="follow">Followed by 5M</p>
+                        </div>
+                    </div>
+                    <div class="friends-chat">
+                        <img src="./images/unsplash_RGKdWJOUFH0.png" alt="Fola Dayo">
+                        <div class="streamer-details">
+                            <p><strong>Fola Dayo</strong></p>
+                            <p class="follow">Followed by 35k</p>
+                        </div>
+                    </div>
+                    <div class="friends-chat">
+                        <img src="./images/Ellipse 9.png" alt="Stephen Jack">
+                        <div class="streamer-details">
+                            <p><strong>Stephen Jack</strong></p>
+                            <p class="follow">Followed by 11k</p>
+                        </div>
+                    </div>
+                    <div class="friends-chat">
+                        <img src="./images/Group 7.png" alt="Clark Ronson">
+                        <div class="streamer-details">
+                            <p><strong>Clark Ronson</strong></p>
+                            <p class="follow">Followed by 65k</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="topic">
+            <span class="iconify" data-icon="mdi:cog"></span>
+            <p>Settings</p>
+            
+        </div>
+         <div class="setting-controls">
+            <div class="profile-header">
+                <img src="./images/rcc3.jpg" alt="Profile Picture" class="profile-picture">
+                <div class="profile-info">
+                    <h3>Rico Heart</h3>
+                    <p>Rico07@gmail.com</p>
+                </div>
+            </div>
+            <hr>
+            
+            <div class="settings-section">
+                <h2>Account Settings</h2>
+                <ul>
+                    <li id="edit-profile-link">
+                        <div class="acc-flex">
+                            <div class="acc-name">
+                                <span class="iconify" data-icon="ic:outline-person" data-width="18"></span>
+                                <span>Edit profile</span>
+                            </div>
+                            <div class="acc-icon">
+                                <span class="iconify" data-icon="ic:outline-chevron-right" data-width="18"></span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="acc-flex">
+                            <div class="acc-name">
+                                <span class="iconify" data-icon="ic:outline-lock" data-width="18"></span>
+                                <span>Change password</span>
+                            </div>
+                            <div class="acc-icon">
+                                <span class="iconify" data-icon="ic:outline-chevron-right" data-width="18"></span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="acc-flex">
+                            <div class="acc-name">
+                                <span class="iconify" data-icon="ic:outline-credit-card" data-width="18"></span>
+                                <span>Add a payment method</span>
+                            </div>
+                            <div class="acc-icon">
+                                <span class="iconify" data-icon="ic:outline-add" data-width="18"></span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="acc-flex">
+                            <div class="acc-name">
+                                <span class="iconify" data-icon="ic:outline-notifications" data-width="18"></span>
+                                <span>Push notifications</span>
+                            </div>
+                            <div class="acc-icon">
+                                <label class="switch">
+                                    <input type="checkbox" checked>
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="acc-flex">
+                            <div class="acc-name">
+                                <span class="iconify" data-icon="ic:outline-nightlight-round" data-width="18"></span>
+                                <span>Dark mode</span>
+                            </div>
+                            <div class="acc-icon">
+                                <label class="switch">
+                                    <input type="checkbox">
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="settings-section">
+                <h2>More</h2>
+                <ul>
+                    <li>
+                        <div class="acc-flex">
+                            <div class="acc-name">
+                                <span class="iconify" data-icon="ic:outline-language" data-width="18"></span>
+                                <span>Language</span>
+                            </div>
+                            <div class="acc-icon">
+                                <span class="iconify" data-icon="ic:outline-chevron-right" data-width="18"></span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="acc-flex">
+                            <div class="acc-name">
+                                <span class="iconify" data-icon="ic:outline-info" data-width="18"></span>
+                                <span>About us</span>
+                            </div>
+                            <div class="acc-icon">
+                                <span class="iconify" data-icon="ic:outline-chevron-right" data-width="18"></span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="acc-flex">
+                            <div class="acc-name">
+                                <span class="iconify" data-icon="ic:outline-policy" data-width="18"></span>
+                                <span>Privacy policy</span>
+                            </div>
+                            <div class="acc-icon">
+                                <span class="iconify" data-icon="ic:outline-chevron-right" data-width="18"></span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="acc-flex">
+                            <div class="acc-name">
+                                <span class="iconify" data-icon="ic:outline-description" data-width="18"></span>
+                                <span>Terms and conditions</span>
+                            </div>
+                            <div class="acc-icon">
+                                 <span class="iconify" data-icon="ic:outline-chevron-right" data-width="18"></span>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+
+    <!-- edit profile page  -->
+    <div class="content" id="edit-profile-section" style="display: none;">
+        <div class="edit-profile-header">
+            <h2>Edit Profile</h2>
+        </div>
+        <div class="edit-profile-form">
+            <div class="profile-image">
+                <img src="path_to_image.jpg" alt="Profile Picture">
+                <span class="edit-icon">✏️</span>
+            </div>
+            <form>
+                <label for="username">Username</label>
+                <input type="text" id="username" value="Jackson Michel">
+
+                <label for="email">Email</label>
+                <input type="email" id="email" value="Jackson07@gmail.com">
+
+                <label for="country">Country</label>
+                <select id="country">
+                    <option value="Nepal">Nepal</option>
+                    <!-- Add more countries if needed -->
+                </select>
+
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" value="+977 9856231489">
+
+                <button type="submit">Update</button>
+            </form>
+        </div>
+    </div>
+        
+
+        
+
+
+    </div>
+
+    <script>
+
+        // Get the user image and popup elements
+        const userImg = document.getElementById('user-img');
+        const userPopup = document.getElementById('popup');
+        
+        // Toggle the popup visibility on click
+        userImg.addEventListener('click', (e) => {
+            e.stopPropagation(); // Prevent the click event from bubbling up
+            userPopup.classList.toggle('hidden');
+        });
+        
+        // Close the popup if clicked outside
+        document.addEventListener('click', (event) => {
+            if (!userPopup.contains(event.target) && !userImg.contains(event.target)) {
+                userPopup.classList.add('hidden');
+            }
+        });
+        //edit profile functionlity 
+        // JavaScript to toggle the display of the edit profile section
+        document.getElementById('edit-profile-link').addEventListener('click', function() {
+            var editProfileSection = document.getElementById('edit-profile-section');
+            if (editProfileSection.style.display === 'none' || editProfileSection.style.display === '') {
+                editProfileSection.style.display = 'block';
+            } else {
+                editProfileSection.style.display = 'none';
+            }
+        });
+       
+
+    </script>
+</body>
+
+</html>

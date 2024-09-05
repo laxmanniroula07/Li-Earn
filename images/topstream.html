@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Streams and Top Rank</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .stream-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .stream-card {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .stream-card h5 {
+            margin-top: 10px;
+            font-size: 1rem;
+        }
+
+        .stream-card small {
+            color: gray;
+        }
+
+        .country-filter button {
+            margin: 0 5px;
+        }
+
+        .top-rank {
+            padding: 10px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+        }
+
+        .top-rank h5 {
+            margin-bottom: 15px;
+        }
+
+        .top-rank .rank-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .top-rank .rank-item img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .top-rank .rank-item small {
+            color: gray;
+        }
+
+        .top-rank .rank-item span {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-4">
+        <!-- Top Streams Section -->
+        <div class="row">
+            <div class="col-lg-8">
+                <h3>Top Streams</h3>
+                <div class="country-filter mb-3">
+                    <button class="btn btn-outline-secondary active">All</button>
+                    <button class="btn btn-outline-secondary">USA</button>
+                    <button class="btn btn-outline-secondary">Vietnam</button>
+                    <button class="btn btn-outline-secondary">Indonesia</button>
+                    <button class="btn btn-outline-secondary">Brazil</button>
+                    <button class="btn btn-outline-secondary">Saudi Arabia</button>
+                    <button class="btn btn-outline-secondary dropdown-toggle" data-toggle="dropdown">More</button>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 col-sm-6">
+                        <div class="stream-card">
+                            <img src="path_to_image1.jpg" alt="Stream 1">
+                            <h5>who cares? <span>😳</span></h5>
+                            <small>👤 CapriCorn 🌟 358 viewers</small>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="stream-card">
+                            <img src="path_to_image2.jpg" alt="Stream 2">
+                            <h5>hlw <span>😍</span></h5>
+                            <small>👤 SANEEE 🌟 75 viewers</small>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="stream-card">
+                            <img src="path_to_image3.jpg" alt="Stream 3">
+                            <h5>就我吧，别滑了 <span>🤣</span></h5>
+                            <small>👤 喵了一个小喵喵 🌟 87 viewers</small>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="stream-card">
+                            <img src="path_to_image4.jpg" alt="Stream 4">
+                            <h5>八月快乐 <span>🐱</span></h5>
+                            <small>👤 噜噜 🌟 123 viewers</small>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="stream-card">
+                            <img src="path_to_image5.jpg" alt="Stream 5">
+                            <h5>Sample Stream <span>😎</span></h5>
+                            <small>👤 User 🌟 100 viewers</small>
+                        </div>
+                    </div>
+                    <!-- Add more streams as needed -->
+                </div>
+            </div>
+
+            <!-- Top Rank Section -->
+            <div class="col-lg-4">
+                <div class="top-rank">
+                    <h5>Top Rank</h5>
+                    <div class="rank-item">
+                        <div class="d-flex align-items-center">
+                            <img src="path_to_rank1.jpg" alt="Rank 1">
+                            <span>1. Name</span>
+                        </div>
+                        <small>10,000,059 Beans</small>
+                    </div>
+                    <div class="rank-item">
+                        <div class="d-flex align-items-center">
+                            <img src="path_to_rank2.jpg" alt="Rank 2">
+                            <span>2. Boo</span>
+                        </div>
+                        <small>6,412,938 Beans</small>
+                    </div>
+                    <div class="rank-item">
+                        <div class="d-flex align-items-center">
+                            <img src="path_to_rank3.jpg" alt="Rank 3">
+                            <span>3. Name</span>
+                        </div>
+                        <small>5,000,221 Beans</small>
+                    </div>
+                    <!-- Add more rank items as needed -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

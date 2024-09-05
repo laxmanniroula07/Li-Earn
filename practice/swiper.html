@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Related Streamers</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <style>
+    body {
+    font-family: Arial, sans-serif;
+    background-color: #f3f3f3;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.swiper-container {
+    background-color: #e0b4ff;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    width: 60%;
+}
+
+h2 {
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.swiper-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+.swiper-content {
+    display: flex;
+    overflow: hidden;
+    width: 60%;
+}
+
+.streamer-card {
+    background-color: #f5a623;
+    padding: 10px;
+    margin: 0 5px;
+    border-radius: 10px;
+    min-width: 250px;
+    flex-shrink: 0;
+    position: relative;
+}
+
+.streamer-card img {
+    width: 50%;
+    border-radius: 10px;
+}
+
+.streamer-info {
+    margin-top: 10px;
+    color: #ffffff;
+    text-align: left;
+    font-size: 14px;
+}
+
+.streamer-info .name {
+    font-weight: bold;
+}
+
+.streamer-info .viewers {
+    font-size: 12px;
+    color: #ccc;
+}
+
+.streamer-info .live {
+    color: red;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: white;
+    padding: 2px 6px;
+    border-radius: 6px;
+}
+
+.swiper-button {
+    background-color: #ffffff;
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.swiper-button.left {
+    left: -40px;
+}
+
+.swiper-button.right {
+    right: -40px;
+}
+
+  </style>
+    <div class="swiper-container">
+        <h2>Related Streamers</h2>
+        <div class="swiper-wrapper">
+            <button class="swiper-button left">&lt;</button>
+            <div class="swiper-content">
+                <div class="streamer-card">
+                    <img src="../images/cc.jpg" alt="Harry Potter">
+                    <div class="streamer-info">
+                        <span class="name">Harry Potter</span>
+                        <span class="viewers">398 viewers</span>
+                        <span class="live">LIVE</span>
+                    </div>
+                </div>
+                <div class="streamer-card">
+                    <img src="../images/rcc2.jpg" alt="Selena">
+                    <div class="streamer-info">
+                        <span class="name">Selena</span>
+                        <span class="viewers">400 viewers</span>
+                        <span class="live">LIVE</span>
+                    </div>
+                </div>
+                <div class="streamer-card">
+                    <img src="streamer3.jpg" alt="Robert">
+                    <div class="streamer-info">
+                        <span class="name">Robert</span>
+                        <span class="viewers">690 viewers</span>
+                        <span class="live">LIVE</span>
+                    </div>
+                </div>
+            </div>
+            <button class="swiper-button right">&gt;</button>
+        </div>
+    </div>
+    <script src="script.js">
+      const swiperContent = document.querySelector('.swiper-content');
+const swiperLeft = document.querySelector('.swiper-button.left');
+const swiperRight = document.querySelector('.swiper-button.right');
+
+let scrollAmount = 0;
+
+swiperRight.addEventListener('click', () => {
+    swiperContent.scrollBy({ left: 300, behavior: 'smooth' });
+    scrollAmount += 300;
+    updateButtons();
+});
+
+swiperLeft.addEventListener('click', () => {
+    swiperContent.scrollBy({ left: -300, behavior: 'smooth' });
+    scrollAmount -= 300;
+    updateButtons();
+});
+
+function updateButtons() {
+    swiperLeft.disabled = scrollAmount <= 0;
+    swiperRight.disabled = swiperContent.scrollWidth - swiperContent.clientWidth <= scrollAmount;
+}
+
+updateButtons();
+
+    </script>
+</body>
+</html>

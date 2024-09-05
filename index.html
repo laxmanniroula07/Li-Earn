@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Li-Earn</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6LoH3G3BfaV1N6impaXxO1NvvM9bzODpqwXG/nVQv69Az0IIY5mZPbXnI5vIGk7" crossorigin="anonymous">
+    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+</head>
+<body>
+    <!-- Sidebar Navigation -->
+    <div class="side-nav">
+        <img class="logo" src="./images/Group 51.png" alt="Logo">
+        <nav>
+            <ul>
+                <li class="active"><span class="iconify" data-icon="mdi:home"></span> Home</li>
+                <li><a href="communitypost.html" class="list-item-link"><span class="iconify" data-icon="mdi:star"></span> Community Post</a></li>
+                <li><a href="GamingLive.html"  class="list-item-link"><span class="iconify" data-icon="mdi:gamepad-variant"></span> Gaming Live</a></li>
+                <li> <a href="Category.html"  class="list-item-link"><span class="iconify" data-icon="mdi:category"></span> Category</a></li>
+                <li> <a href="Discover.html"  class="list-item-link"><span class="iconify" data-icon="mdi:compass"></span> Discover</a></li>
+                <li> <span class="iconify" data-icon="mdi:schedule"></span> Schedule</li>
+                <li> <a href="Setting.html" class="list-item-link"><span class="iconify" data-icon="mdi:cog"></span> Settings</a></li>
+                <li><span class="iconify" data-icon="mdi:logout"></span> Logout</li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Main Content Container -->
+ <div class="container">
+    <div class="header-bar">
+        <div class="search-bar">
+            <input type="text" placeholder="Search here....">
+        </div>
+        <div class="user-bar">
+            <img src="./images/gravity-ui--bell-dot.svg" alt="Notification">
+            <img src="./images/bi--chat-dots.svg" alt="Chat Icon">
+            <img id="user-img" src="./images/Ellipse 9.png" alt="User">
+        </div>
+
+        <!-- User  profile Popup -->
+        <div id="popup" class="popup hidden">
+            <div class="user-profile">
+                <div class="user-pp">
+                    <img src="./images/Ellipse 9.png" alt="User profile picture">
+                </div>
+                <div class="username">
+                    <h3>Ben Stokes</h3>
+                    <p>stokes55@gmail.com</p>
+                </div>
+            </div>
+            <button class="go-live-btn">
+                <i class="fas fa-video"></i> Go Live
+            </button>
+            <div class="all-streaming">
+                <h4>ALL Streaming</h4>
+                <div class="section-1">
+                    <img src="./images/ff.jpeg" alt="Streaming image">
+                    <img src="./images/coc.jpeg" alt="">
+                </div>
+                <h4>Favourites Streams</h4>
+                <div class="section-2">
+                    <img src="./images/Ellipse 7.png" alt="Favourite Stream 1">
+                    <img src="./images/unsplash_RGKdWJOUFH0.png" alt="Favourite Stream 2">
+                    <img src="./images/Ellipse 9.png" alt="Favourite Stream 3">
+                    <img src="./images/Rectangle 7.png" alt="Favourite Stream 4">
+                    <img src="./images/Group 7.png" alt="Favourite Stream 5">
+                </div>
+                <h4>Friends</h4>
+                <div class="section-3">
+                    <div class="friends-chat">
+                        <img src="./images/Ellipse 7.png" alt="Garbieal Paul">
+                        <div class="streamer-details">
+                            <p><strong>Garbieal Paul</strong></p>
+                            <p class="follow">Followed by 5M</p>
+                        </div>
+                    </div>
+                    <div class="friends-chat">
+                        <img src="./images/unsplash_RGKdWJOUFH0.png" alt="Fola Dayo">
+                        <div class="streamer-details">
+                            <p><strong>Fola Dayo</strong></p>
+                            <p class="follow">Followed by 35k</p>
+                        </div>
+                    </div>
+                    <div class="friends-chat">
+                        <img src="./images/Ellipse 9.png" alt="Stephen Jack">
+                        <div class="streamer-details">
+                            <p><strong>Stephen Jack</strong></p>
+                            <p class="follow">Followed by 11k</p>
+                        </div>
+                    </div>
+                    <div class="friends-chat">
+                        <img src="./images/Group 7.png" alt="Clark Ronson">
+                        <div class="streamer-details">
+                            <p><strong>Clark Ronson</strong></p>
+                            <p class="follow">Followed by 65k</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+     <!-- Live Video  and image slider  -->
+    <div class="flex-video">
+        <div class="live-video-container">
+            <div class="video-live-label">Live</div>
+            <button onclick="window.location.href='live.html'">Enter Live</button>
+            <video autoplay controls>
+                <source src="./videos/live video.mp4" type="video/mp4" autoplay>
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="scroll-container">
+            <div class="images">
+                <img src="./images/unsplash_RGKdWJOUFH0.png" alt="Image 1">
+                <img src="./images/unsplash_RGKdWJOUFH0.png" alt="Image 2">
+                <img src="./images/unsplash_RGKdWJOUFH0.png" alt="Image 3">
+                <img src="./images/unsplash_RGKdWJOUFH0.png" alt="Image 4">
+                <img src="./images/unsplash_RGKdWJOUFH0.png" alt="Image 5">
+            </div>
+        </div>
+    </div>
+    <!-- Top Streaming and Country Buttons -->
+    <div class="stream-container">
+        <h3>Top Streaming:</h3>
+        <div class="country-items">
+            <button id="all-btn" class="btn">ALL</button>
+            <button class="btn">USA</button>
+            <button class="btn">Vietnam</button>
+            <button class="btn">Indonesia</button>
+            <button class="btn">Brazil</button>
+            <button id="more-btn" class="btn">More <span>&#x25BC;</span></button>
+
+            <!-- Dropdown Content -->
+            <div class="dropdown-content" id="dropdown-content">
+                <div class="tab">
+                    <button class="tablinks active" onclick="openTab(event, 'Asia')">Asia</button>
+                    <button class="tablinks" onclick="openTab(event, 'America')">America</button>
+                    <button class="tablinks" onclick="openTab(event, 'Europe')">Europe</button>
+                    <button class="tablinks" onclick="openTab(event, 'Africa')">Africa</button>
+                    <button class="tablinks" onclick="openTab(event, 'Oceania')">Oceania</button>
+                </div>
+                <div id="Asia" class="tabcontent" style="display: block;">
+                    <a href="#">India</a>
+                    <a href="#">Nepal</a>
+                    <a href="#">Indonesia</a>
+                    <a href="#">Vietnam</a>
+                    <a href="#">Thailand</a>
+                    <a href="#">Saudi Arabia</a>
+                </div>
+                <div id="America" class="tabcontent">
+                    <a href="#">USA</a>
+                    <a href="#">Canada</a>
+                    <a href="#">Brazil</a>
+                    <a href="#">Mexico</a>
+                    <a href="#">Argentina</a>
+                </div>
+                <div id="Europe" class="tabcontent">
+                    <a href="#">UK</a>
+                    <a href="#">Germany</a>
+                    <a href="#">France</a>
+                    <a href="#">Italy</a>
+                    <a href="#">Spain</a>
+                    <a href="#">Denmark</a>
+                </div>
+                <div id="Africa" class="tabcontent">
+                    <a href="#">Nigeria</a>
+                    <a href="#">South Africa</a>
+                    <a href="#">Egypt</a>
+                    <a href="#">Kenya</a>
+                    <a href="#">Morocco</a>
+                </div>
+                <div id="Oceania" class="tabcontent">
+                    <a href="#">Australia</a>
+                    <a href="#">New Zealand</a>
+                    <a href="#">Fiji</a>
+                    <a href="#">Papua New Guinea</a>
+                    <a href="#">Samoa</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Card Container -->
+        <div class="stream">
+            <div class="card-container">
+                <!-- Card 1 -->
+                <div class="card">
+                    <div class="card-image">
+                        <img src="./images/Rectangle 7.png" alt="Tokyo Revengers">
+                        <div class="live-label">Live</div>
+                    </div>
+                    <div class="card-content">
+                        <h1>Series: Tokyo Revengers</h1>
+                        <div class="streamer-profile">
+                            <div class="streamer-info">
+                                <img src="./images/Ellipse 7.png" alt="Clark Ronson">
+                                <div class="streamer-details">
+                                    <p><strong>Clark Ronson</strong></p>
+                                    <p class="viewers-info"><span class="iconify viewers-icon" data-icon="mdi:eye-outline"></span> 70.8K watching</p>
+                                </div>
+                            </div>
+                            <div class="streamer-watch-live">
+                                <button class="watch-live-button">
+                                    <span class="iconify" data-icon="jam:movie"></span> Watch Live
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-image">
+                        <img src="./images/Rectangle 7.png" alt="Tokyo Revengers">
+                        <div class="live-label">Live</div>
+                    </div>
+                    <div class="card-content">
+                        <h1>Series: Tokyo Revengers</h1>
+                        <div class="streamer-profile">
+                            <div class="streamer-info">
+                                <img src="./images/Ellipse 7.png" alt="Clark Ronson">
+                                <div class="streamer-details">
+                                    <p><strong>Clark Ronson</strong></p>
+                                    <p class="viewers-info"><span class="iconify viewers-icon" data-icon="mdi:eye-outline"></span> 70.8K watching</p>
+                                </div>
+                            </div>
+                            <div class="streamer-watch-live">
+                                <button class="watch-live-button">
+                                    <span class="iconify" data-icon="jam:movie"></span> Watch Live
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-image">
+                        <img src="./images/Rectangle 7.png" alt="Tokyo Revengers">
+                        <div class="live-label">Live</div>
+                    </div>
+                    <div class="card-content">
+                        <h1>Series: Tokyo Revengers</h1>
+                        <div class="streamer-profile">
+                            <div class="streamer-info">
+                                <img src="./images/Ellipse 7.png" alt="Clark Ronson">
+                                <div class="streamer-details">
+                                    <p><strong>Clark Ronson</strong></p>
+                                    <p class="viewers-info"><span class="iconify viewers-icon" data-icon="mdi:eye-outline"></span> 70.8K watching</p>
+                                </div>
+                            </div>
+                            <div class="streamer-watch-live">
+                                <button class="watch-live-button">
+                                    <span class="iconify" data-icon="jam:movie"></span> Watch Live
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-image">
+                        <img src="./images/Rectangle 7.png" alt="Tokyo Revengers">
+                        <div class="live-label">Live</div>
+                    </div>
+                    <div class="card-content">
+                        <h1>Series: Tokyo Revengers</h1>
+                        <div class="streamer-profile">
+                            <div class="streamer-info">
+                                <img src="./images/Ellipse 7.png" alt="Clark Ronson">
+                                <div class="streamer-details">
+                                    <p><strong>Clark Ronson</strong></p>
+                                    <p class="viewers-info"><span class="iconify viewers-icon" data-icon="mdi:eye-outline"></span>70.8K watching</p>
+                                </div>
+                            </div>
+                            <div class="streamer-watch-live">
+                                <button class="watch-live-button">
+                                    <span class="iconify" data-icon="jam:movie"></span>Watch Live
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-image">
+                        <img src="./images/Rectangle 7.png" alt="Tokyo Revengers">
+                        <div class="live-label">Live</div>
+                    </div>
+                    <div class="card-content">
+                        <h1>Series: Tokyo Revengers</h1>
+                        <div class="streamer-profile">
+                            <div class="streamer-info">
+                                <img src="./images/Ellipse 7.png" alt="Clark Ronson">
+                                <div class="streamer-details">
+                                    <p><strong>Clark Ronson</strong></p>
+                                    <p class="viewers-info"><span class="iconify viewers-icon" data-icon="mdi:eye-outline"></span> 70.8K watching</p>
+                                </div>
+                            </div>
+                            <div class="streamer-watch-live">
+                                <button class="watch-live-button">
+                                    <span class="iconify" data-icon="jam:movie"></span> Watch Live
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-image">
+                        <img src="./images/Rectangle 7.png" alt="Tokyo Revengers">
+                        <div class="live-label">Live</div>
+                    </div>
+                    <div class="card-content">
+                        <h1>Series: Tokyo Revengers</h1>
+                        <div class="streamer-profile">
+                            <div class="streamer-info">
+                                <img src="./images/Ellipse 7.png" alt="Clark Ronson">
+                                <div class="streamer-details">
+                                    <p><strong>Clark Ronson</strong></p>
+                                    <p class="viewers-info"><span class="iconify viewers-icon" data-icon="mdi:eye-outline"></span> 70.8K watching</p>
+                                </div>
+                            </div>
+                            <div class="streamer-watch-live">
+                                <button class="watch-live-button">
+                                    <span class="iconify" data-icon="jam:movie"></span> Watch Live
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-image">
+                        <img src="./images/Rectangle 7.png" alt="Tokyo Revengers">
+                        <div class="live-label">Live</div>
+                    </div>
+                    <div class="card-content">
+                        <h1>Series: Tokyo Revengers</h1>
+                        <div class="streamer-profile">
+                            <div class="streamer-info">
+                                <img src="./images/Ellipse 7.png" alt="Clark Ronson">
+                                <div class="streamer-details">
+                                    <p><strong>Clark Ronson</strong></p>
+                                    <p class="viewers-info"><span class="iconify viewers-icon" data-icon="mdi:eye-outline"></span> 70.8K watching</p>
+                                </div>
+                            </div>
+                            <div class="streamer-watch-live">
+                                <button class="watch-live-button">
+                                    <span class="iconify" data-icon="jam:movie"></span> Watch Live
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-image">
+                        <img src="./images/Rectangle 7.png" alt="Tokyo Revengers">
+                        <div class="live-label">Live</div>
+                    </div>
+                    <div class="card-content">
+                        <h1>Series: Tokyo Revengers</h1>
+                        <div class="streamer-profile">
+                            <div class="streamer-info">
+                                <img src="./images/Ellipse 7.png" alt="Clark Ronson">
+                                <div class="streamer-details">
+                                    <p><strong>Clark Ronson</strong></p>
+                                    <p class="viewers-info"><span class="iconify viewers-icon" data-icon="mdi:eye-outline"></span> 70.8K watching</p>
+                                </div>
+                            </div>
+                            <div class="streamer-watch-live">
+                                <button class="watch-live-button">
+                                    <span class="iconify" data-icon="jam:movie"></span> Watch Live
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+   <!-- Top Streamers Section  with coins and views-->
+   <div class="top-rank">
+    <h2>Top Streamers</h2>
+    <div class="rank-tabs">
+        <button class="rank-tab-active" onclick="showContent('coins')">Coins</button>
+        <button class="rank-tab" onclick="showContent('views')">Views</button>
+    </div>
+    <div id="coins-content" class="content active">
+        <!-- coins ranks -->
+        <div class="streamer-info">
+            <img src="./images/Ellipse 7.png" alt="Clark Ronson">
+            <div class="streamer-details">
+                <p><strong>Clark Ronson</strong></p>
+                <p><span class="iconify viewers-icon" data-icon="mdi:eye-outline"></span> 25K Coins</p>
+            </div>
+            <div class="top-streamer-watch-live">
+                <button class="top-watch-live-button">
+                    <span class="iconify" data-icon="jam:movie"></span> Watch Live
+                </button>
+            </div>
+        </div>
+        <div class="streamer-info">
+            <img src="./images/Ellipse 7.png" alt="Clark Ronson">
+            <div class="streamer-details">
+                <p><strong>Clark Ronson</strong></p>
+                <p><span class="iconify viewers-icon" data-icon="mdi:eye-outline"></span> 15K Coins</p>
+            </div>
+            <div class="top-streamer-watch-live">
+                <button class="top-watch-live-button">
+                    <span class="iconify" data-icon="jam:movie"></span> Watch Live
+                </button>
+            </div>
+        </div>
+        <div class="streamer-info">
+            <img src="./images/Ellipse 7.png" alt="Clark Ronson">
+            <div class="streamer-details">
+                <p><strong>Clark Ronson</strong></p>
+                <p><span class="iconify viewers-icon" data-icon="mdi:eye-outline"></span> 9K Coins</p>
+            </div>
+            <div class="top-streamer-watch-live">
+                <button class="top-watch-live-button">
+                    <span class="iconify" data-icon="jam:movie"></span> Watch Live
+                </button>
+            </div>
+        </div>
+        <div class="streamer-info">
+            <img src="./images/Ellipse 7.png" alt="Clark Ronson">
+            <div class="streamer-details">
+                <p><strong>Clark Ronson</strong></p>
+                <p><span class="iconify viewers-icon" data-icon="mdi:eye-outline"></span> 9.8K Coins</p>
+            </div>
+            <div class="top-streamer-watch-live">
+                <button class="top-watch-live-button">
+                    <span class="iconify" data-icon="jam:movie"></span> Watch Live
+                </button>
+            </div>
+        </div>
+        <div class="streamer-info">
+            <img src="./images/Ellipse 7.png" alt="Clark Ronson">
+            <div class="streamer-details">
+                <p><strong>Clark Ronson</strong></p>
+                <p><span class="iconify viewers-icon" data-icon="mdi:eye-outline"></span> 9K Coins</p>
+            </div>
+            <div class="top-streamer-watch-live">
+                <button class="top-watch-live-button">
+                    <span class="iconify" data-icon="jam:movie"></span> Watch Live
+                </button>
+            </div>
+        </div>
+        <div class="streamer-info">
+            <img src="./images/Ellipse 7.png" alt="Clark Ronson">
+            <div class="streamer-details">
+                <p><strong>Clark Ronson</strong></p>
+                <p><span class="iconify viewers-icon" data-icon="mdi:eye-outline"></span> 8K Coins</p>
+            </div>
+            <div class="top-streamer-watch-live">
+                <button class="top-watch-live-button">
+                    <span class="iconify" data-icon="jam:movie"></span> Watch Live
+                </button>
+            </div>
+        </div>
+        <div class="streamer-info">
+            <img src="./images/Ellipse 7.png" alt="Clark Ronson">
+            <div class="streamer-details">
+                <p><strong>Clark Ronson</strong></p>
+                <p><span class="iconify viewers-icon" data-icon="mdi:eye-outline"></span> 5K Coins</p>
+            </div>
+            <div class="top-streamer-watch-live">
+                <button class="top-watch-live-button">
+                    <span class="iconify" data-icon="jam:movie"></span> Watch Live
+                </button>
+            </div>
+        </div>
+    </div>
+    <div id="views-content" class="content">
+        <!--  views Ranks -->
+        <div class="streamer-info">
+            <img src="./images/Ellipse 9.png" alt="Clark Ronson">
+            <div class="streamer-details">
+                <p><strong>Clark Ronson</strong></p>
+                <p><span class="iconify viewers-icon" data-icon="mdi:eye-outline"></span> 125K views</p>
+            </div>
+            <div class="top-streamer-watch-live">
+                <button class="top-watch-live-button">
+                    <span class="iconify" data-icon="jam:movie"></span> Watch Live
+                </button>
+            </div>
+        </div>
+        <div class="streamer-info">
+            <img src="./images/Ellipse 9.png" alt="Clark Ronson">
+            <div class="streamer-details">
+                <p><strong>Clark Ronson</strong></p>
+                <p><span class="iconify viewers-icon" data-icon="mdi:eye-outline"></span> 50K views</p>
+            </div>
+            <div class="top-streamer-watch-live">
+                <button class="top-watch-live-button">
+                    <span class="iconify" data-icon="jam:movie"></span> Watch Live
+                </button>
+            </div>
+        </div>
+        <div class="streamer-info">
+            <img src="./images/Ellipse 9.png" alt="Clark Ronson">
+            <div class="streamer-details">
+                <p><strong>Clark Ronson</strong></p>
+                <p><span class="iconify viewers-icon" data-icon="mdi:eye-outline"></span> 45K views</p>
+            </div>
+            <div class="top-streamer-watch-live">
+                <button class="top-watch-live-button">
+                    <span class="iconify" data-icon="jam:movie"></span> Watch Live
+                </button>
+            </div>
+        </div>
+        <div class="streamer-info">
+            <img src="./images/Ellipse 9.png" alt="Clark Ronson">
+            <div class="streamer-details">
+                <p><strong>Clark Ronson</strong></p>
+                <p><span class="iconify viewers-icon" data-icon="mdi:eye-outline"></span> 15K views</p>
+            </div>
+            <div class="top-streamer-watch-live">
+                <button class="top-watch-live-button">
+                    <span class="iconify" data-icon="jam:movie"></span> Watch Live
+                </button>
+            </div>
+        </div>
+        <div class="streamer-info">
+            <img src="./images/Ellipse 9.png" alt="Clark Ronson">
+            <div class="streamer-details">
+                <p><strong>Clark Ronson</strong></p>
+                <p><span class="iconify viewers-icon" data-icon="mdi:eye-outline"></span> 9K views</p>
+            </div>
+            <div class="top-streamer-watch-live">
+                <button class="top-watch-live-button">
+                    <span class="iconify" data-icon="jam:movie"></span> Watch Live
+                </button>
+            </div>
+        </div>
+        <div class="streamer-info">
+            <img src="./images/Ellipse 9.png" alt="Clark Ronson">
+            <div class="streamer-details">
+                <p><strong>Clark Ronson</strong></p>
+                <p><span class="iconify viewers-icon" data-icon="mdi:eye-outline"></span> 8K views</p>
+            </div>
+            <div class="top-streamer-watch-live">
+                <button class="top-watch-live-button">
+                    <span class="iconify" data-icon="jam:movie"></span> Watch Live
+                </button>
+            </div>
+        </div>
+        <div class="streamer-info">
+            <img src="./images/Ellipse 9.png" alt="Clark Ronson">
+            <div class="streamer-details">
+                <p><strong>Clark Ronson</strong></p>
+                <p><span class="iconify viewers-icon" data-icon="mdi:eye-outline"></span> 5K views</p>
+            </div>
+            <div class="top-streamer-watch-live">
+                <button class="top-watch-live-button">
+                    <span class="iconify" data-icon="jam:movie"></span> Watch Live
+                </button>
+            </div>
+        </div>
+    </div>
+ </div>
+</div>
+ <!--game streaming Buttons and games  -->
+ <div class="game-streaming">
+    <h3>Game Streaming:</h3>
+    <div class="games-items">
+        <button id="all-btn" class="btn">PUBG </button>
+        <button class="btn">COD</button>
+        <button class="btn">Ludo King</button>
+        <button class="btn">GTA v</button>
+        <button class="btn">Class Of Clans</button>
+        <button id="more-btn" class="btn">More <span>&#x25BC;</span></button>
+    </div>
+    <!-- Card Container -->
+    <div class="stream">
+        <div class="card-container">
+            <!-- Card 1 -->
+            <div class="card">
+                <div class="card-image">
+                    <img src="./images/pubg.jpeg" alt="pubg">
+                    <div class="live-label">Live</div>
+                </div>
+                <div class="card-content">
+                    <h1>Series: Tokyo Revengers</h1>
+                    <div class="streamer-profile">
+                        <div class="streamer-info">
+                            <img src="./images/Ellipse 7.png" alt="Clark Ronson">
+                            <div class="streamer-details">
+                                <p><strong>Clark Ronson</strong></p>
+                                <p class="viewers-info"><span class="iconify viewers-icon" data-icon="mdi:eye-outline"></span> 70.8K watching</p>
+                            </div>
+                        </div>
+                        <div class="streamer-watch-live">
+                            <button class="watch-live-button">
+                                <span class="iconify" data-icon="jam:movie"></span> Watch Live
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-image">
+                    <img src="./images/pubg.jpeg" alt="Tokyo Revengers">
+                    <div class="live-label">Live</div>
+                </div>
+                <div class="card-content">
+                    <h1>Series: Tokyo Revengers</h1>
+                    <div class="streamer-profile">
+                        <div class="streamer-info">
+                            <img src="./images/Ellipse 7.png" alt="Clark Ronson">
+                            <div class="streamer-details">
+                                <p><strong>Clark Ronson</strong></p>
+                                <p class="viewers-info"><span class="iconify viewers-icon" data-icon="mdi:eye-outline"></span> 70.8K watching</p>
+                            </div>
+                        </div>
+                        <div class="streamer-watch-live">
+                            <button class="watch-live-button">
+                                <span class="iconify" data-icon="jam:movie"></span> Watch Live
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-image">
+                    <img src="./images/pubg.jpeg" alt="Tokyo Revengers">
+                    <div class="live-label">Live</div>
+                </div>
+                <div class="card-content">
+                    <h1>Series: Tokyo Revengers</h1>
+                    <div class="streamer-profile">
+                        <div class="streamer-info">
+                            <img src="./images/Ellipse 7.png" alt="Clark Ronson">
+                            <div class="streamer-details">
+                                <p><strong>Clark Ronson</strong></p>
+                                <p class="viewers-info"><span class="iconify viewers-icon" data-icon="mdi:eye-outline"></span> 70.8K watching</p>
+                            </div>
+                        </div>
+                        <div class="streamer-watch-live">
+                            <button class="watch-live-button">
+                                <span class="iconify" data-icon="jam:movie"></span> Watch Live
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-image">
+                    <img src="./images/pubg.jpeg" alt="Tokyo Revengers">
+                    <div class="live-label">Live</div>
+                </div>
+                <div class="card-content">
+                    <h1>Series: Tokyo Revengers</h1>
+                    <div class="streamer-profile">
+                        <div class="streamer-info">
+                            <img src="./images/Ellipse 7.png" alt="Clark Ronson">
+                            <div class="streamer-details">
+                                <p><strong>Clark Ronson</strong></p>
+                                <p class="viewers-info"><span class="iconify viewers-icon" data-icon="mdi:eye-outline"></span>70.8K watching</p>
+                            </div>
+                        </div>
+                        <div class="streamer-watch-live">
+                            <button class="watch-live-button">
+                                <span class="iconify" data-icon="jam:movie"></span>Watch Live
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-image">
+                    <img src="./images/pubg.jpeg" alt="Tokyo Revengers">
+                    <div class="live-label">Live</div>
+                </div>
+                <div class="card-content">
+                    <h1>Series: Tokyo Revengers</h1>
+                    <div class="streamer-profile">
+                        <div class="streamer-info">
+                            <img src="./images/Ellipse 7.png" alt="Clark Ronson">
+                            <div class="streamer-details">
+                                <p><strong>Clark Ronson</strong></p>
+                                <p class="viewers-info"><span class="iconify viewers-icon" data-icon="mdi:eye-outline"></span> 70.8K watching</p>
+                            </div>
+                        </div>
+                        <div class="streamer-watch-live">
+                            <button class="watch-live-button">
+                                <span class="iconify" data-icon="jam:movie"></span> Watch Live
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-image">
+                    <img src="./images/pubg.jpeg" alt="Tokyo Revengers">
+                    <div class="live-label">Live</div>
+                </div>
+                <div class="card-content">
+                    <h1>Series: Tokyo Revengers</h1>
+                    <div class="streamer-profile">
+                        <div class="streamer-info">
+                            <img src="./images/Ellipse 7.png" alt="Clark Ronson">
+                            <div class="streamer-details">
+                                <p><strong>Clark Ronson</strong></p>
+                                <p class="viewers-info"><span class="iconify viewers-icon" data-icon="mdi:eye-outline"></span> 70.8K watching</p>
+                            </div>
+                        </div>
+                        <div class="streamer-watch-live">
+                            <button class="watch-live-button">
+                                <span class="iconify" data-icon="jam:movie"></span> Watch Live
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-image">
+                    <img src="./images/pubg.jpeg" alt="Tokyo Revengers">
+                    <div class="live-label">Live</div>
+                </div>
+                <div class="card-content">
+                    <h1>Series: Tokyo Revengers</h1>
+                    <div class="streamer-profile">
+                        <div class="streamer-info">
+                            <img src="./images/Ellipse 7.png" alt="Clark Ronson">
+                            <div class="streamer-details">
+                                <p><strong>Clark Ronson</strong></p>
+                                <p class="viewers-info"><span class="iconify viewers-icon" data-icon="mdi:eye-outline"></span> 70.8K watching</p>
+                            </div>
+                        </div>
+                        <div class="streamer-watch-live">
+                            <button class="watch-live-button">
+                                <span class="iconify" data-icon="jam:movie"></span> Watch Live
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-image">
+                    <img src="./images/pubg.jpeg" alt="Tokyo Revengers">
+                    <div class="live-label">Live</div>
+                </div>
+                <div class="card-content">
+                    <h1>Series: Tokyo Revengers</h1>
+                    <div class="streamer-profile">
+                        <div class="streamer-info">
+                            <img src="./images/Ellipse 7.png" alt="Clark Ronson">
+                            <div class="streamer-details">
+                                <p><strong>Clark Ronson</strong></p>
+                                <p class="viewers-info"><span class="iconify viewers-icon" data-icon="mdi:eye-outline"></span> 70.8K watching</p>
+                            </div>
+                        </div>
+                        <div class="streamer-watch-live">
+                            <button class="watch-live-button">
+                                <span class="iconify" data-icon="jam:movie"></span> Watch Live
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+<!--  games Top Streamers Section  with coins and views-->
+<div class="top-rank">
+<h2>Top Streamers</h2>
+<div class="rank-tabs">
+    <button class="rank-tab-active" onclick="showContent('coins')">Coins</button>
+    <button class="rank-tab" onclick="showContent('views')">Views</button>
+</div>
+<div id="coins-content" class="content active">
+    <!-- coins ranks -->
+    <div class="streamer-info">
+        <img src="./images/Ellipse 7.png" alt="Clark Ronson">
+        <div class="streamer-details">
+            <p><strong>Clark Ronson</strong></p>
+            <p><span class="iconify viewers-icon" data-icon="mdi:eye-outline"></span> 25K Coins</p>
+        </div>
+        <div class="top-streamer-watch-live">
+            <button class="top-watch-live-button">
+                <span class="iconify" data-icon="jam:movie"></span> Watch Live
+            </button>
+        </div>
+    </div>
+    <div class="streamer-info">
+        <img src="./images/Ellipse 7.png" alt="Clark Ronson">
+        <div class="streamer-details">
+            <p><strong>Clark Ronson</strong></p>
+            <p><span class="iconify viewers-icon" data-icon="mdi:eye-outline"></span> 15K Coins</p>
+        </div>
+        <div class="top-streamer-watch-live">
+            <button class="top-watch-live-button">
+                <span class="iconify" data-icon="jam:movie"></span> Watch Live
+            </button>
+        </div>
+    </div>
+    <div class="streamer-info">
+        <img src="./images/Ellipse 7.png" alt="Clark Ronson">
+        <div class="streamer-details">
+            <p><strong>Clark Ronson</strong></p>
+            <p><span class="iconify viewers-icon" data-icon="mdi:eye-outline"></span> 9K Coins</p>
+        </div>
+        <div class="top-streamer-watch-live">
+            <button class="top-watch-live-button">
+                <span class="iconify" data-icon="jam:movie"></span> Watch Live
+            </button>
+        </div>
+    </div>
+    <div class="streamer-info">
+        <img src="./images/Ellipse 7.png" alt="Clark Ronson">
+        <div class="streamer-details">
+            <p><strong>Clark Ronson</strong></p>
+            <p><span class="iconify viewers-icon" data-icon="mdi:eye-outline"></span> 9.8K Coins</p>
+        </div>
+        <div class="top-streamer-watch-live">
+            <button class="top-watch-live-button">
+                <span class="iconify" data-icon="jam:movie"></span> Watch Live
+            </button>
+        </div>
+    </div>
+    <div class="streamer-info">
+        <img src="./images/Ellipse 7.png" alt="Clark Ronson">
+        <div class="streamer-details">
+            <p><strong>Clark Ronson</strong></p>
+            <p><span class="iconify viewers-icon" data-icon="mdi:eye-outline"></span> 9K Coins</p>
+        </div>
+        <div class="top-streamer-watch-live">
+            <button class="top-watch-live-button">
+                <span class="iconify" data-icon="jam:movie"></span> Watch Live
+            </button>
+        </div>
+    </div>
+    <div class="streamer-info">
+        <img src="./images/Ellipse 7.png" alt="Clark Ronson">
+        <div class="streamer-details">
+            <p><strong>Clark Ronson</strong></p>
+            <p><span class="iconify viewers-icon" data-icon="mdi:eye-outline"></span> 8K Coins</p>
+        </div>
+        <div class="top-streamer-watch-live">
+            <button class="top-watch-live-button">
+                <span class="iconify" data-icon="jam:movie"></span> Watch Live
+            </button>
+        </div>
+    </div>
+    <div class="streamer-info">
+        <img src="./images/Ellipse 7.png" alt="Clark Ronson">
+        <div class="streamer-details">
+            <p><strong>Clark Ronson</strong></p>
+            <p><span class="iconify viewers-icon" data-icon="mdi:eye-outline"></span> 5K Coins</p>
+        </div>
+        <div class="top-streamer-watch-live">
+            <button class="top-watch-live-button">
+                <span class="iconify" data-icon="jam:movie"></span> Watch Live
+            </button>
+        </div>
+    </div>
+</div>
+<div id="views-content" class="content">
+    <!--  views Ranks -->
+    <div class="streamer-info">
+        <img src="./images/Ellipse 9.png" alt="Clark Ronson">
+        <div class="streamer-details">
+            <p><strong>Clark Ronson</strong></p>
+            <p><span class="iconify viewers-icon" data-icon="mdi:eye-outline"></span> 125K views</p>
+        </div>
+        <div class="top-streamer-watch-live">
+            <button class="top-watch-live-button">
+                <span class="iconify" data-icon="jam:movie"></span> Watch Live
+            </button>
+        </div>
+    </div>
+    <div class="streamer-info">
+        <img src="./images/Ellipse 9.png" alt="Clark Ronson">
+        <div class="streamer-details">
+            <p><strong>Clark Ronson</strong></p>
+            <p><span class="iconify viewers-icon" data-icon="mdi:eye-outline"></span> 50K views</p>
+        </div>
+        <div class="top-streamer-watch-live">
+            <button class="top-watch-live-button">
+                <span class="iconify" data-icon="jam:movie"></span> Watch Live
+            </button>
+        </div>
+    </div>
+    <div class="streamer-info">
+        <img src="./images/Ellipse 9.png" alt="Clark Ronson">
+        <div class="streamer-details">
+            <p><strong>Clark Ronson</strong></p>
+            <p><span class="iconify viewers-icon" data-icon="mdi:eye-outline"></span> 45K views</p>
+        </div>
+        <div class="top-streamer-watch-live">
+            <button class="top-watch-live-button">
+                <span class="iconify" data-icon="jam:movie"></span> Watch Live
+            </button>
+        </div>
+    </div>
+    <div class="streamer-info">
+        <img src="./images/Ellipse 9.png" alt="Clark Ronson">
+        <div class="streamer-details">
+            <p><strong>Clark Ronson</strong></p>
+            <p><span class="iconify viewers-icon" data-icon="mdi:eye-outline"></span> 15K views</p>
+        </div>
+        <div class="top-streamer-watch-live">
+            <button class="top-watch-live-button">
+                <span class="iconify" data-icon="jam:movie"></span> Watch Live
+            </button>
+        </div>
+    </div>
+    <div class="streamer-info">
+        <img src="./images/Ellipse 9.png" alt="Clark Ronson">
+        <div class="streamer-details">
+            <p><strong>Clark Ronson</strong></p>
+            <p><span class="iconify viewers-icon" data-icon="mdi:eye-outline"></span> 9K views</p>
+        </div>
+        <div class="top-streamer-watch-live">
+            <button class="top-watch-live-button">
+                <span class="iconify" data-icon="jam:movie"></span> Watch Live
+            </button>
+        </div>
+    </div>
+    <div class="streamer-info">
+        <img src="./images/Ellipse 9.png" alt="Clark Ronson">
+        <div class="streamer-details">
+            <p><strong>Clark Ronson</strong></p>
+            <p><span class="iconify viewers-icon" data-icon="mdi:eye-outline"></span> 8K views</p>
+        </div>
+        <div class="top-streamer-watch-live">
+            <button class="top-watch-live-button">
+                <span class="iconify" data-icon="jam:movie"></span> Watch Live
+            </button>
+        </div>
+    </div>
+    <div class="streamer-info">
+        <img src="./images/Ellipse 9.png" alt="Clark Ronson">
+        <div class="streamer-details">
+            <p><strong>Clark Ronson</strong></p>
+            <p><span class="iconify viewers-icon" data-icon="mdi:eye-outline"></span> 5K views</p>
+        </div>
+        <div class="top-streamer-watch-live">
+            <button class="top-watch-live-button">
+                <span class="iconify" data-icon="jam:movie"></span> Watch Live
+            </button>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+
+    
+
+    <script>
+        // Side Navigation Bar functioanlaity 
+        const navItems = document.querySelectorAll('.side-nav li');
+        navItems.forEach(item => {
+            item.addEventListener('click', function () {
+                navItems.forEach(nav => nav.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    
+        // images scroll functionality 
+        const container = document.querySelector('.images');
+        function scrollUp() {
+            container.scrollBy({ top: -100, behavior: 'smooth' });
+        }
+        function scrollDown() {
+            container.scrollBy({ top: 100, behavior: 'smooth' });
+        }
+    
+        // streaming  More  button with others country functionality 
+        function openTab(evt, continentName) {
+            const tabcontent = document.getElementsByClassName("tabcontent");
+            for (let i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            const tablinks = document.getElementsByClassName("tablinks");
+            for (let i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(continentName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+        document.addEventListener("DOMContentLoaded", function() {
+            document.querySelector('.tablinks.active').click();
+        });
+    
+
+        // Top Ranks Button for Coins and Views functionality 
+        function showContent(contentType) {
+  
+    document.querySelector('.content.active')?.classList.remove('active');
+    document.querySelector('.rank-tab.active')?.classList.remove('active');
+    
+    document.getElementById(`${contentType}-content`).classList.add('active');
+    document.querySelector(`.rank-tab[data-type="${contentType}"]`).classList.add('active');
+}
+showContent('coins');
+
+     
+
+
+        // User profile Popup Functionality
+        const userImg = document.getElementById('user-img');
+        const userPopup = document.getElementById('popup');
+    
+        userImg.addEventListener('click', (e) => {
+            e.stopPropagation(); 
+            userPopup.classList.toggle('hidden');
+        });
+        document.addEventListener('click', (event) => {
+            if (!userPopup.contains(event.target) && !userImg.contains(event.target)) {
+                userPopup.classList.add('hidden');
+            }
+        });
+    </script>
+    
+</body>
+
+</html>

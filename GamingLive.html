@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gamming Live </title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6LoH3G3BfaV1N6impaXxO1NvvM9bzODpqwXG/nVQv69Az0IIY5mZPbXnI5vIGk7" crossorigin="anonymous">
+    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+</head>
+<body>
+    <style>
+        .side-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 220px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #1a1a1a;
+    color: white;
+}
+
+.side-nav img {
+    height: auto;
+    width: 140px;
+    margin: 25px 0 45px 20%;
+}
+
+.side-nav li {
+    padding: 10px;
+    margin: 5px 0;
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.side-nav li span.iconify {
+    margin: 10px;
+}
+
+
+.side-nav li.active, .side-nav li:hover {
+    background-color: #6C5DD3;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    width: 150px;
+    color: white;
+}
+
+.list-item-link {
+    text-decoration: none;
+    color: inherit; 
+    display: block; 
+}
+
+
+
+/* main body content  */
+.container {
+    background-color:#6C5DD3;
+    margin-left: 212px;
+    padding-left: 25px;
+    width: -webkit-fill-available;
+    box-sizing: border-box;
+    
+}
+
+.header-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 15px;
+    background-color:#6C5DD3;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.search-bar {
+    flex:1 ;
+    display: flex;
+    padding: 0 20px;
+}
+
+.search-bar input[type="text"] {
+    width: 100%;
+    max-width: 600px;
+    padding: 10px;
+    border-radius: 25px;
+    border: none;
+}
+
+/* User Bar */
+.user-bar {
+    position: relative;
+    display: flex;
+    justify-content:space-between;
+    padding: 15px;
+    
+}
+.user-bar img {
+    width: 27px;
+    height: 27px;
+    margin: 10px;
+    border-radius: 50%;
+    
+}
+.user-bar #user-img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%; 
+}
+
+
+
+/* Popup */
+.popup {
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    background-color:white;
+    border-radius: 15px;
+    width: 290px;
+    padding: 20px;
+    z-index: 1000;
+}
+
+.hidden {
+    display: none;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.user-pp img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.username h3 {
+    font-size: 18px;
+    margin: 0;
+    color: black;
+}
+
+.username p {
+    margin: 0;
+    font-size: 14px;
+    color: #555;
+}
+
+/* Go Live Button */
+.go-live-btn {
+    width: 100%;
+    padding: 10px 0;
+    background-color: #e58300;
+    color: white;
+    border: none;
+    font-size: 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.go-live-btn:hover {
+    background-color: blue;
+}
+
+.all-streaming h4 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+/* All Streaming */
+
+
+/* Favourites Streams */
+.section-2 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.section-2 img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Friends */
+.friends-chat {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.friends-chat img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.streamer-details p {
+    margin: 0;
+    font-size: 14px;
+    color: #555;
+}
+
+.streamer-details p strong {
+    color: #000;
+}
+
+
+
+
+
+
+
+/*  popular game and swiper container   */
+
+
+.swiper-wrapper {
+    margin-right: 15px;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+/* Individual swiper slides */
+.swiper-slide {
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+ 
+}
+
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: fit-content;
+    object-fit: cover;
+    
+}
+
+/* View div for game titles */
+.swiper-slide .view {
+    background-color: #FA9200; 
+    color: white;
+   
+    padding: 10px ;
+    position: absolute;
+    bottom:0;
+    height: 30px;
+    width: 100%;
+    
+    
+
+}
+.view p{
+    text-align: center;
+    font-size: 18px;
+    padding-bottom: 10px;
+    font-weight: bold;
+}
+/* .more-link { 
+    float: right;
+    color: #FA9200;
+    text-decoration: none;
+    font-weight: bold;
+}
+*/
+
+.swiper-pagination {
+    bottom: 10px;
+    text-align: center;
+}
+
+.swiper-pagination-bullet {
+    background:  white; 
+    opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+    background: #FA9200; 
+}
+
+
+
+   /* live games */
+
+.game-filters{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+    margin-bottom: 20px;
+    
+}
+
+.game-filters button {
+    background-color: white;
+    color: black;
+    width: auto;
+    margin: 2px;
+    padding: 8px 15px; 
+    border-radius: 20px;
+    border: none;
+    font-weight: bold;
+}
+
+
+.game-filters :hover{
+    background-color: #FA9200;
+}
+
+
+/* games card */
+.live-games-list {
+    display: grid;
+   grid-template-columns: 1fr 1fr 1fr 1fr ;
+   gap:  15px;
+   margin-right: 25px;
+    
+}
+
+.live-game-card { 
+    background-color: white;
+    border-radius: 6px;
+    color: black;
+    text-align: center;
+}
+
+
+.img-cont img {
+    width: 100%;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.game-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 10px;
+}
+
+.game-info img {
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.viewers  {
+    display: flex;
+    align-items: left;
+    flex-direction:column;
+    flex-grow: 1;
+    margin: 0;}
+
+    .viewers p{
+        font-size: 20px;
+        margin: 0;
+        padding: 0;
+    }
+    
+
+
+.viewers .p2 {
+    font-size: 13px;
+    color: gray;
+
+}
+
+.icon {
+    display: flex;
+    align-items: center;
+}
+
+.icon img {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
+
+.icon p {
+    margin: 0;
+    font-size: 16px;
+}
+
+.popular-games,
+.live-games {
+    margin-top: 20px;
+}
+
+.popular-games h2,
+.live-games h2 {
+    font-size: 26px;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.game-filters button.active{
+    background-color: #FA9200;
+    color: white;
+}
+
+
+
+
+
+
+
+
+    </style>
+   <!-- Sidebar Navigation -->
+   <div class="side-nav">
+    <img class="logo" src="./images/Group 51.png" alt="Logo">
+    <nav>
+        <ul>
+            <li><a href="index.html" class="list-item-link"><span class="iconify" data-icon="mdi:home"></span> Home</a></li>
+            <li><a href="communitypost.html" class="list-item-link"><span class="iconify" data-icon="mdi:star"></span> Community Post</a></li>
+            <li class="active"><a href="GamingLive.html" class="list-item-link"><span class="iconify" data-icon="mdi:gamepad-variant"></span> Gaming Live</a></li>
+            <li > <a href="communitypost.html" class="list-item-link"><span class="iconify" data-icon="mdi:category"></span> Category</a></li>
+            <li> <a href="communitypost.html" class="list-item-link"><span class="iconify" data-icon="mdi:compass"></span> Discover </a></li>
+            <li><span class="iconify" data-icon="mdi:schedule"></span> Schedule</li>
+            <li><span class="iconify" data-icon="mdi:cog"></span> Settings</li>
+            <li><span class="iconify" data-icon="mdi:logout"></span> Logout</li>
+        </ul>
+    </nav>
+</div>
+
+<!-- Main Content Container -->
+<div class="container">
+    <!-- Header Bar -->
+    <div class="header-bar">
+        <!-- Search Bar -->
+        <div class="search-bar">
+            <input type="text" placeholder="Search here....">
+        </div>
+
+        <!-- User Bar -->
+        <div class="user-bar">
+            <img src="./images/gravity-ui--bell-dot.svg" alt="Notification">
+            <img src="./images/bi--chat-dots.svg" alt="Chat Icon">
+            <img id="user-img" src="./images/Ellipse 9.png" alt="User">
+        </div>
+    </div>
+
+    <!-- User Popup -->
+    <div id="popup" class="popup hidden">
+        <!-- User Profile Section -->
+        <div class="user-profile">
+            <div class="user-pp">
+                <img src="./images/Ellipse 9.png" alt="User profile picture">
+            </div>
+            <div class="username">
+                <h3>Ben Stokes</h3>
+                <p>stokes55@gmail.com</p>
+            </div>
+        </div>
+
+        <!-- Go Live Button -->
+        <button class="go-live-btn">
+            <i class="fas fa-video"></i> Go Live
+        </button>
+
+        <!-- Streaming Section -->
+        <div class="all-streaming">
+            <h4>ALL Streaming</h4>
+            <div class="section-1">
+                <img src="./streaming-image.png" alt="Streaming image">
+            </div>
+
+            <!-- Favourites Streams Section -->
+            <h4>Favourites Streams</h4>
+            <div class="section-2">
+                <img src="./images/Ellipse 7.png" alt="Favourite Stream 1">
+                <img src="./images/unsplash_RGKdWJOUFH0.png" alt="Favourite Stream 2">
+                <img src="./images/Ellipse 9.png" alt="Favourite Stream 3">
+                <img src="./images/Rectangle 7.png" alt="Favourite Stream 4">
+                <img src="./images/Group 7.png" alt="Favourite Stream 5">
+            </div>
+
+            <!-- Friends Section -->
+            <h4>Friends</h4>
+            <div class="section-3">
+                <div class="friends-chat">
+                    <img src="./images/Ellipse 7.png" alt="Garbieal Paul">
+                    <div class="streamer-details">
+                        <p><strong>Garbieal Paul</strong></p>
+                        <p class="follow">Followed by 5M</p>
+                    </div>
+                </div>
+                <div class="friends-chat">
+                    <img src="./images/unsplash_RGKdWJOUFH0.png" alt="Fola Dayo">
+                    <div class="streamer-details">
+                        <p><strong>Fola Dayo</strong></p>
+                        <p class="follow">Followed by 35k</p>
+                    </div>
+                </div>
+                <div class="friends-chat">
+                    <img src="./images/Ellipse 9.png" alt="Stephen Jack">
+                    <div class="streamer-details">
+                        <p><strong>Stephen Jack</strong></p>
+                        <p class="follow">Followed by 11k</p>
+                    </div>
+                </div>
+                <div class="friends-chat">
+                    <img src="./images/Group 7.png" alt="Clark Ronson">
+                    <div class="streamer-details">
+                        <p><strong>Clark Ronson</strong></p>
+                        <p class="follow">Followed by 65k</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+   <div class="game-container">
+       <!-- Most Popular Games Section -->
+       <section class="popular-games">
+          <h2>Most popular games on Li-Earn</h2>
+          <a href="#" class="more-link">More ></a>
+        
+             <!-- Swiper -->
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="./images/fortnite.jpeg" alt="fortnite">
+                        <div class="view">
+                            <p>Fortnite</p>
+                        </div>
+                    </div>
+                    
+                    <div class="swiper-slide">
+                        <img src="./images/coc.jpeg" alt="coc">
+                        <div class="view">
+                            <p>Class of clans </p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./images/pubg.jpeg" alt="pubg">
+                        <div class="view">
+                            <p>Pubg</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./images/uno.png" alt="uno">
+                        <div class="view">
+                            <p>UNO</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./images/ff.jpeg" alt="ff">
+                        <div class="view">
+                            <p>FreeFire</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./images/candy.jpeg" alt="candy crush">
+                        <div class="view">
+                            <p>Candy Crush</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./images/pubg.jpeg" alt="pubg">
+                        <div class="view">
+                            <p>Pubg</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./images/ludo.jpeg" alt="ludo">
+                        <div class="view">
+                            <p>Ludo King</p>
+                        </div>
+                    </div>
+                </div>
+              <div class="swiper-pagination"></div>
+            </div>
+        </section>
+
+         <!-- Live Games Section -->
+        <section class="live-games">
+            <h2>Live Games</h2>
+            <div class="game-filters">
+                <button class="filter-button active">All</button>
+                <button class="filter-button" >PUBG Mobile</button>
+                <button class="filter-button">GTA V</button>
+                <button class="filter-button">Clash Of Clans</button>
+                <button class="filter-button">FreeFire</button>
+                <button class="filter-button">Call Of Duty</button>
+                <button class="filter-button">Ludo King</button>
+                <button class="filter-button">Fortnite</button>
+                <button class="filter-button">Candy Crush</button>
+                <button class="filter-button">UNO!</button>
+            </div>
+            <div class="live-games-list">
+                <div class="live-game-card" data-category="PUBG Mobile">
+                    <div class="img-cont">
+                    <img src="./images/pubg.jpeg" alt="PUBG Mobile">
+                     </div>
+                    <div class="game-info">
+                        <img src="./images/Ellipse 7.png" alt="Clark Ronson">
+                        <div class="viewers">
+                            <p>Corey Davis</p>
+                            <p class="p2">Gamer</p>
+                        </div>
+                        <div class="icon">
+                            <img src="./images/user.png" alt="User Icon">
+                            <p>155</p>
+                        </div>
+                    </div> 
+                </div>
+                <div class="live-game-card" data-category="Ludo King">
+                    <div class="img-cont">
+                    <img src="./images/ludo.jpeg" alt="ludo">
+                    </div>
+                    <div class="game-info">
+                        <img src="./images/Ellipse 7.png" alt="Clark Ronson">
+                        <div class="viewers">
+                            <p>John Doe</p>
+                            <p class="p2">Gamer</p>
+                        </div>
+                        <div class="icon">
+                            <img src="./images/user.png" alt="User Icon">
+                            <p>320</p>
+                        </div>
+                    </div> 
+                </div>
+                <div class="live-game-card" data-category="GTA V">
+                    <img src="./images/gta.jpeg" alt="GTA V">
+                    <div class="game-info">
+                        <img src="./images/Ellipse 7.png" alt="Clark Ronson">
+                        <div class="viewers">
+                            <p>Clark Ronson</p>
+                            <p class="p2">Gamer</p>
+                        </div>
+                        <div class="icon">
+                            <img src="./images/user.png" alt="User Icon">
+                            <p>200</p>
+                        </div>
+                    </div> 
+                </div>
+                <div class="live-game-card" data-category="PUBG Mobile">
+                    <div class="img-cont">
+                    <img src="./images/pubg.jpeg" alt="PUBG Mobile">
+                        </div>
+                      <div class="game-info">
+                        <img src="./images/Ellipse 7.png" alt="Clark Ronson">
+                        <div class="viewers">
+                            <p>Corey Davis</p>
+                            <p class="p2">Gamer</p>
+                        </div>
+                        <div class="icon">
+                            <img src="./images/user.png" alt="User Icon">
+                            <p>155</p>
+                        </div>
+                    </div> 
+                </div>
+                <div class="live-game-card" data-category="Ludo King">
+                    <div class="img-cont">
+                    <img src="./images/ludo.jpeg" alt="ludo">
+                    </div>
+                    <div class="game-info">
+                        <img src="./images/Ellipse 7.png" alt="Clark Ronson">
+                        <div class="viewers">
+                            <p>John Doe</p>
+                            <p class="p2">Gamer</p>
+                        </div>
+                        <div class="icon">
+                            <img src="./images/user.png" alt="User Icon">
+                            <p>320</p>
+                        </div>
+                    </div> 
+                </div>
+                <div class="live-game-card" data-category="UNO!">
+                    <div class="img-cont">
+                    <img src="./images/uno.png" alt="uno">
+                    </div>
+                    <div class="game-info">
+                        <img src="./images/Ellipse 7.png" alt="Clark Ronson">
+                        <div class="viewers">
+                            <p>Alex Smith</p>
+                            <p class="p2">Gamer</p>
+                        </div>
+                        <div class="icon">
+                            <img src="./images/user.png" alt="User Icon">
+                            <p>400</p>
+                        </div>
+                    </div> 
+                </div>
+                <div class="live-game-card" data-category="Call Of Duty"> 
+                    <img src="./images/cod.jpeg" alt="cod">
+                    <div class="game-info">
+                        <img src="./images/Ellipse 7.png" alt="Clark Ronson">
+                        <div class="viewers">
+                            <p>Corey Davis</p>
+                            <p class="p2">Gamer</p>
+                        </div>
+                        <div class="icon">
+                            <img src="./images/user.png" alt="User Icon">
+                            <p>155</p>
+                        </div>
+                    </div> 
+                </div>
+                <div class="live-game-card" data-category="Clash Of Clans">
+                    <div class="img-cont">
+                    <img src="./images/coc.jpeg" alt="Coc">
+                    </div>
+                    <div class="game-info">
+                        <img src="./images/Ellipse 7.png" alt="Clark Ronson">
+                        <div class="viewers">
+                            <p>John Doe</p>
+                            <p class="p2">Gamer</p>
+                        </div>
+                        <div class="icon">
+                            <img src="./images/user.png" alt="User Icon">
+                            <p>320</p>
+                        </div>
+                    </div> 
+                </div>
+                <div class="live-game-card" data-category="Fortnite">
+                    <div class="img-cont">
+                    <img src="./images/fortnite.jpeg" alt="fortnite">
+                    </div>
+                    <div class="game-info">
+                        <img src="./images/Ellipse 7.png" alt="Clark Ronson">
+                        <div class="viewers">
+                            <p>John Doe</p>
+                            <p class="p2">Gamer</p>
+                        </div>
+                        <div class="icon">
+                            <img src="./images/user.png" alt="User Icon">
+                            <p>320</p>
+                        </div>
+                    </div> 
+                </div>
+                <div class="live-game-card" data-category="Candy Crush">
+                    <div class="img-cont">
+                    <img src="./images/candy.jpeg" alt="candy crush">
+                    </div>
+                    <div class="game-info">
+                        <img src="./images/Ellipse 7.png" alt="Clark Ronson">
+                        <div class="viewers">
+                            <p>Alex Smith</p>
+                            <p class="p2">Gamer</p>
+                        </div>
+                        <div class="icon">
+                            <img src="./images/user.png" alt="User Icon">
+                            <p>400</p>
+                        </div>
+                    </div> 
+                </div>
+                <div class="live-game-card" data-category="FreeFire">
+                    <div class="img-cont">
+                    <img src="./images/ff.jpeg" alt="ff">
+                    </div>
+                    <div class="game-info">
+                        <img src="./images/Ellipse 7.png" alt="Clark Ronson">
+                        <div class="viewers">
+                            <p>Corey Davis</p>
+                            <p class="p2">Gamer</p>
+                        </div>
+                        <div class="icon">
+                            <img src="./images/user.png" alt="User Icon">
+                            <p>155</p>
+                        </div>
+                    </div> 
+                </div>
+                <div class="live-game-card" data-category="GTA V">
+                    <img src="./images/gta.jpeg" alt="GTA V">
+                    <div class="game-info">
+                        <img src="./images/Ellipse 7.png" alt="Clark Ronson">
+                        <div class="viewers">
+                            <p>Clark Ronson</p>
+                            <p class="p2">Gamer</p>
+                        </div>
+                        <div class="icon">
+                            <img src="./images/user.png" alt="User Icon">
+                            <p>200</p>
+                        </div>
+                    </div> 
+                </div>
+                <div class="live-game-card" data-category="UNO!">
+                    <div class="img-cont">
+                    <img src="./images/uno.png" alt="uno">
+                    </div>
+                    <div class="game-info">
+                        <img src="./images/Ellipse 7.png" alt="Clark Ronson">
+                        <div class="viewers">
+                            <p>Alex Smith</p>
+                            <p class="p2">Gamer</p>
+                        </div>
+                        <div class="icon">
+                            <img src="./images/user.png" alt="User Icon">
+                            <p>400</p>
+                        </div>
+                    </div> 
+                </div>
+                <div class="live-game-card" data-category="Call Of Duty"> 
+                    <img src="./images/cod.jpeg" alt="cod">
+                    <div class="game-info">
+                        <img src="./images/Ellipse 7.png" alt="Clark Ronson">
+                        <div class="viewers">
+                            <p>Corey Davis</p>
+                            <p class="p2">Gamer</p>
+                        </div>
+                        <div class="icon">
+                            <img src="./images/user.png" alt="User Icon">
+                            <p>155</p>
+                        </div>
+                    </div> 
+                </div>
+                <div class="live-game-card" data-category="Clash Of Clans">
+                    <div class="img-cont">
+                    <img src="./images/coc.jpeg" alt="Coc">
+                    </div>
+                    <div class="game-info">
+                        <img src="./images/Ellipse 7.png" alt="Clark Ronson">
+                        <div class="viewers">
+                            <p>John Doe</p>
+                            <p class="p2">Gamer</p>
+                        </div>
+                        <div class="icon">
+                            <img src="./images/user.png" alt="User Icon">
+                            <p>320</p>
+                        </div>
+                    </div> 
+                </div>
+                <div class="live-game-card" data-category="FreeFire">
+                    <div class="img-cont">
+                    <img src="./images/ff.jpeg" alt="ff">
+                    </div>
+                    <div class="game-info">
+                        <img src="./images/Ellipse 7.png" alt="Clark Ronson">
+                        <div class="viewers">
+                            <p>Corey Davis</p>
+                            <p class="p2">Gamer</p>
+                        </div>
+                        <div class="icon">
+                            <img src="./images/user.png" alt="User Icon">
+                            <p>155</p>
+                        </div>
+                    </div> 
+                </div>
+                <div class="live-game-card" data-category="Fortnite">
+                    <div class="img-cont">
+                    <img src="./images/fortnite.jpeg" alt="fortnite">
+                    </div>
+                    <div class="game-info">
+                        <img src="./images/Ellipse 7.png" alt="Clark Ronson">
+                        <div class="viewers">
+                            <p>John Doe</p>
+                            <p class="p2">Gamer</p>
+                        </div>
+                        <div class="icon">
+                            <img src="./images/user.png" alt="User Icon">
+                            <p>320</p>
+                        </div>
+                    </div> 
+                </div>
+                <div class="live-game-card" data-category="GTA V">
+                    <img src="./images/gta.jpeg" alt="GTA V">
+                    <div class="game-info">
+                        <img src="./images/Ellipse 7.png" alt="Clark Ronson">
+                        <div class="viewers">
+                            <p>Clark Ronson</p>
+                            <p class="p2">Gamer</p>
+                        </div>
+                        <div class="icon">
+                            <img src="./images/user.png" alt="User Icon">
+                            <p>200</p>
+                        </div>
+                    </div> 
+                </div>
+                <div class="live-game-card" data-category="PUBG Mobile">
+                    <div class="img-cont">
+                    <img src="./images/pubg.jpeg" alt="PUBG Mobile">
+                        </div>
+                      <div class="game-info">
+                        <img src="./images/Ellipse 7.png" alt="Clark Ronson">
+                        <div class="viewers">
+                            <p>Corey Davis</p>
+                            <p class="p2">Gamer</p>
+                        </div>
+                        <div class="icon">
+                            <img src="./images/user.png" alt="User Icon">
+                            <p>155</p>
+                        </div>
+                    </div> 
+                </div>
+                <div class="live-game-card" data-category="Candy Crush">
+                    <div class="img-cont">
+                    <img src="./images/candy.jpeg" alt="candy crush">
+                    </div>
+                    <div class="game-info">
+                        <img src="./images/Ellipse 7.png" alt="Clark Ronson">
+                        <div class="viewers">
+                            <p>Alex Smith</p>
+                            <p class="p2">Gamer</p>
+                        </div>
+                        <div class="icon">
+                            <img src="./images/user.png" alt="User Icon">
+                            <p>400</p>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+        </section>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    
+
+
+    
+
+
+</div>
+
+
+
+<script>
+     // Get the user image and popup elements
+const userImg = document.getElementById('user-img');
+const userPopup = document.getElementById('popup');
+
+// Toggle the popup visibility on click
+userImg.addEventListener('click', (e) => {
+    e.stopPropagation(); // Prevent the click event from bubbling up
+    userPopup.classList.toggle('hidden');
+});
+
+// Close the popup if clicked outside
+document.addEventListener('click', (event) => {
+    if (!userPopup.contains(event.target) && !userImg.contains(event.target)) {
+        userPopup.classList.add('hidden');
+    }
+});
+
+//swipr games 
+
+    var swiper = new Swiper(".mySwiper", {
+      slidesPerView: 3,
+      spaceBetween: 30,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+    });
+  
+
+
+  //games category
+     // JavaScript to handle filtering
+     document.querySelectorAll('.filter-button').forEach(button => {
+            button.addEventListener('click', () => {
+                const category = button.textContent.trim();
+                
+                // Remove 'active' class from all buttons
+                document.querySelectorAll('.filter-button').forEach(btn => btn.classList.remove('active'));
+                
+                // Add 'active' class to the clicked button
+                button.classList.add('active');
+
+                // Filter the game cards
+                document.querySelectorAll('.live-game-card').forEach(card => {
+                    const cardCategory = card.getAttribute('data-category');
+                    if (category === "All" || cardCategory === category) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Show all cards by default on page load
+        document.querySelectorAll('.live-game-card').forEach(card => {
+            card.style.display = 'block';
+        });
+
+</script>
+    
+</body>
+</html>
